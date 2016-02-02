@@ -1,0 +1,31 @@
+- Add map / heat map functionality
+- Store hash algorithm in addition to salt & hashed password
+- Store attachment (with) in separate table - each photo with a corresponding
+  incident ID
+- Add 'use my location' option to the location field
+- A lot of people asked about 'what if this is an emergency?' Maybe we should
+  put a little notice at the top of the incident form just being like "if this
+  is an emergency call 911..."
+- Question: what if inputter doesn't know which department should handle the
+  incident?
+- If possible, maybe a way of keeping track of status/edits so we can make a
+  timeline / revert to a previous version of an incident if necessary.
+- Add resolve_time field to incidents table
+- What if a person is in multiple departments?
+- use FOREIGN KEY option in tables when a column is a key from another table
+- use the cool google captcha on our form (google.com/recaptcha)
+- Photos:
+	- If someone is using a phone, option to take a photo right there and
+	  add it to the form
+	- If someone is using a computer, they can upload, but it might be
+	  easier for them to snap a pic from their phone and somehow attach the
+	  photo to the incident. Maybe something like "text a photo to
+	  (781) 555-1234" and if we get our server gets a text from a phone
+	  number thats in the database, we add that photo to that person's
+	  recent incident report
+- Show count numbers in the incident list - so if someone searches "tweety
+  bird" it could be like 'showing 20 of 241' so they can see how many total
+  matches there are
+- Somehow incorporate tags into incident reporting. Either tags that we come up
+  with or tags the user can put it (and could get suggestions from previous
+  tags)
