@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Incidents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Priority</th>
+      <th>Dept</th>
+      <th>Person</th>
+      <th>Subject</th>
+      <th>Location of incident</th>
+      <th>Time of incident</th>
+      <th>Additional details</th>
+      <th>Progress</th>
+      <th>Public</th>
+      <th>Picture url</th>
+      <th>Video url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @incidents.each do |incident| %>
+      <tr>
+        <td><%= incident.priority %></td>
+        <td><%= incident.dept_id %></td>
+        <td><%= incident.person_id %></td>
+        <td><%= incident.subject %></td>
+        <td><%= incident.location_of_incident %></td>
+        <td><%= incident.time_of_incident %></td>
+        <td><%= incident.additional_details %></td>
+        <td><%= incident.progress %></td>
+        <td><%= incident.public %></td>
+        <td><%= incident.picture_url %></td>
+        <td><%= incident.video_url %></td>
+        <td><%= link_to 'Show', incident %></td>
+        <td><%= link_to 'Edit', edit_incident_path(incident) %></td>
+        <td><%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Incident', new_incident_path %>

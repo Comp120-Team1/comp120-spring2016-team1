@@ -1,0 +1,61 @@
+<%= form_for(@incident) do |f| %>
+  <% if @incident.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
+
+      <ul>
+      <% @incident.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :priority %><br>
+    <%= f.number_field :priority %>
+  </div>
+  <div class="field">
+    <%= f.label :dept_id %><br>
+    <%= f.number_field :dept_id %>
+  </div>
+  <div class="field">
+    <%= f.label :person_id %><br>
+    <%= f.number_field :person_id %>
+  </div>
+  <div class="field">
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :location_of_incident %><br>
+    <%= f.text_field :location_of_incident %>
+  </div>
+  <div class="field">
+    <%= f.label :time_of_incident %><br>
+    <%= f.datetime_select :time_of_incident %>
+  </div>
+  <div class="field">
+    <%= f.label :additional_details %><br>
+    <%= f.text_field :additional_details %>
+  </div>
+  <div class="field">
+    <%= f.label :progress %><br>
+    <%= f.number_field :progress %>
+  </div>
+  <div class="field">
+    <%= f.label :public %><br>
+    <%= f.check_box :public %>
+  </div>
+  <div class="field">
+    <%= f.label :picture_url %><br>
+    <%= f.text_field :picture_url %>
+  </div>
+  <div class="field">
+    <%= f.label :video_url %><br>
+    <%= f.text_field :video_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

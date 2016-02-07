@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @incident.priority %>
+</p>
+
+<p>
+  <strong>Dept:</strong>
+  <%= @incident.dept_id %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @incident.person_id %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @incident.subject %>
+</p>
+
+<p>
+  <strong>Location of incident:</strong>
+  <%= @incident.location_of_incident %>
+</p>
+
+<p>
+  <strong>Time of incident:</strong>
+  <%= @incident.time_of_incident %>
+</p>
+
+<p>
+  <strong>Additional details:</strong>
+  <%= @incident.additional_details %>
+</p>
+
+<p>
+  <strong>Progress:</strong>
+  <%= @incident.progress %>
+</p>
+
+<p>
+  <strong>Public:</strong>
+  <%= @incident.public %>
+</p>
+
+<p>
+  <strong>Picture url:</strong>
+  <%= @incident.picture_url %>
+</p>
+
+<p>
+  <strong>Video url:</strong>
+  <%= @incident.video_url %>
+</p>
+
+<%= link_to 'Edit', edit_incident_path(@incident) %> |
+<%= link_to 'Back', incidents_path %>
