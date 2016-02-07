@@ -29,3 +29,6 @@
 - Somehow incorporate tags into incident reporting. Either tags that we come up
   with or tags the user can put it (and could get suggestions from previous
   tags)
+- Option to export incidents (all, or those matching a filter) to a PDF
+- Table view option
+- Implement unit tests
