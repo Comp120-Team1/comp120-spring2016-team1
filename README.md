@@ -37,7 +37,8 @@ ReadMe
 	Our team has spent about 10 hours implementing the MVP. This includes getting the webpage up and running, configuring the incidents application, and designing the webpage. We have implemented a way to enter a new incident, view the open incidents on the timeline, and displaying particular incidents on the web browser.
 
 5. The challenges your team faced working on this leg
-	Our biggest challenge was configuring the application. There are a lot of small details that we didn't initally know how to do, so we had to do some research on that. 
+	Our biggest challenge was configuring the application. There are a lot of small details that we didn't initally know how to do, so we had to do some research on that. Also, generally understanding how to use Ruby on Rails and all of the minor details that come along with that. 
+	After getting our incidents page up and running, it became clear to us that we might have to modify our models for the database to make sure we have enough fields to store information and that we are storing them in the most efficient way, but still making sure that it is easy to query.
 
 6. Why you chose the Ruby web framework that your team used?
 	We chose to use Ruby on Rails. There are many benefits of Rails. First of all, Rails' configuration conventions help speed up the development provess and allow for the progammers to avoid spending a lot of time working on the configuration settings. Secondly, it is a popular, open source web framework so there is a large amount of information on the internet about working with Rails. It is object oriented, handles changes very easily, and it has a very good testing framework.
