@@ -26,9 +26,11 @@ ReadMe
 		- Access an IRB console on exception pages or by using <%= console %> in views
 	'spring'					
 		- Spring speeds up development by keeping your application running in the background.
+	'jquery-datatables-rails'
+		- Datatable plugin for creating responsive tables with front end backend tools for development
 
 2. All other APIs or dependencies
-	We are using no other APIs currently.
+	We are using the ruby gem jquery-datatables-rails plugin to display a table with pagination. The plugin will allow us to show many incidents in a filtered, fast way. The datatable plugin was used as Tina explains that there are "Over 75,000 active people" at the institution who all may have multiple incidents to report.
 
 3. Approximate number of hours your team spent learning Ruby
 	Collectively we have spent about 15 hours learning Ruby. This includes time in class as well as independent research. 
