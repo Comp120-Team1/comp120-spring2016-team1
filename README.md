@@ -52,7 +52,7 @@ ReadMe
 	http://codefol.io/posts/Why-Rails-and-not-Sinatra-or-Node-js
 
 7. Why you chose the database that your team used?
-	We chose postgresql because it is a widely used database that has large amounts of documentation available online. It has informative error messages. It is capable of handling many tasks efficiently. It has "complete support for reliable transactions, i.e. Atomicity, Consistency, Isolation, Durability (ACID)." Therefore it is guaranteed to be reliable. It supports many data types. Lastly, there are many thrid party libraries made to help Postgres be simple to use.
+	We chose postgresql because it is a widely used database that has large amounts of documentation available online. It has informative error messages. It is capable of handling many tasks efficiently. It has "complete support for reliable transactions, i.e. Atomicity, Consistency, Isolation, Durability (ACID)." Because postgresql is highly used and common, when issues appear it is likely that there will be a large amount of documentation to help with problems that arise. It supports many data types. Lastly, there are many thrid party libraries made to help Postgres be simple to use.
 
 	PostgreSQL sources:
 	https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems
