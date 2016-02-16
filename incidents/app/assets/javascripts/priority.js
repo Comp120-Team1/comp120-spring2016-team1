@@ -11,7 +11,7 @@ function highlight_priorities() {
 			$(this).addClass("warning")
 		}
 	   //if ($(this).find('td:first-child').text().toUpperCase().match(text.toUpperCase()))
-			   //$(this).css({ background: "#FC6" }); 
+			   //$(this).css({ background: "#FC6" });
 			//  $(this).show(); // show matching row
 	});
 }
