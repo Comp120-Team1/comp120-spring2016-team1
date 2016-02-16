@@ -11,51 +11,53 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= f.label :priority %><br>
-    <%= f.number_field :priority, :class => "form-control"%>
-  </div>
-  <div class="field form-group">
-    <%= f.label :dept_id %><br>
-    <%= f.number_field :dept_id, :class => "form-control"%>
-  </div>
-  <div class="field form-group">
-    <%= f.label :person_id %><br>
-    <%= f.number_field :person_id, :class => "form-control"%>
-  </div>
-  <div class="field form-group">
+<div class="col-md-10 col-md-offset-1">
+  <div class="field form-group col-md-6 col-md-offset-0">
     <%= f.label :subject %><br>
     <%= f.text_field :subject, :class => "form-control"%>
   </div>
-  <div class="field form-group">
+
+  <div class="field form-group col-md-6 col-md-offset-0">
+    <%= f.label :priority %><br>
+    <%= f.range_field :priority, :min=>0, :max=>10, :class=>"slide", :id=>"slider1"%>
+  </div>
+
+  <div class="field form-group col-md-7" >
+    <%= f.label :additional_details %><br>
+    <%= f.text_area :additional_details, :class => "form-control", :rows => "10"%>
+  </div>
+
+  <div class="field form-group col-md-5">
     <%= f.label :location_of_incident %><br>
     <%= f.text_field :location_of_incident, :class => "form-control"%>
   </div>
-  <div class="field form-group">
+
+  <div class="field form-group col-md-5">
     <%= f.label :time_of_incident %><br>
     <%= f.datetime_select :time_of_incident, :class => "form-control"%>
   </div>
-  <div class="field form-group">
-    <%= f.label :additional_details %><br>
-    <%= f.text_field :additional_details, :class => "form-control"%>
+
+  <div class="field form-group col-md-5">
+    <%= f.label :dept_id, 'Intended Department' %><br>
+    <%= f.number_field :dept_id, :class => "form-control"%>
   </div>
-  <div class="field form-group">
-    <%= f.label :progress %><br>
-    <%= f.number_field :progress, :class => "form-control"%>
+
+  <div class="field form-group col-md-5">
+    <%= f.label :public%>
+    <%= f.label :public do %>
+      <%= f.check_box :public, :checked => true %>
+    <% end %>
   </div>
-  <div class="field form-group">
-    <%= f.label :public %><br>
-    <%= f.check_box :public, :class => "form-control" %>
+
+  <div class="field form-group col-md-8">
+    <%= form_tag '/upload', multipart: true do %>
+      <label for="file">Upload File</label> <%= file_field_tag "file" %>
+    <% end %>
   </div>
-  <div class="field form-group">
-    <%= f.label :picture_url %><br>
-    <%= f.text_field :picture_url, :class => "form-control"%>
-  </div>
-  <div class="field form-group">
-    <%= f.label :video_url %><br>
-    <%= f.text_field :video_url, :class => "form-control"%>
-  </div>
-  <div class="actions">
+
+  <div class="actions col-md-10">
       <%= f.submit :class => "btn btn-success btn-md"%>
   </div>
+</div>
+
 <% end %>

@@ -15,3 +15,4 @@ function highlight_priorities() {
 			//  $(this).show(); // show matching row
 	});
 }
+
