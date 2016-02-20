@@ -13,3 +13,4 @@ Rails.application.config.assets.version = '1.0'
 # To use bootstrap.min.css
 Rails.application.config.assets.precompile += %w( bootstrap.min.css )
 Rails.application.config.assets.precompile += %w( incidents.css )
+Rails.application.config.assets.precompile += %w( table.css )
