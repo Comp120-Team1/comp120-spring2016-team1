@@ -13016,3 +13016,251 @@ Started GET "/assets/local_time.self-128a04d66b2846a17e046fdf49e35ae00618c9e472c
 
 
 Started GET "/assets/application.self-7c44b34571f9c6f50024ec815db695a00182b9937b48d97c4ac1515ab6b385a0.js?body=1" for ::1 at 2016-02-20 15:31:39 -0500
+
+
+Started GET "/" for ::1 at 2016-02-20 15:53:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IncidentsController#index as HTML
+  [1m[35mIncident Load (0.5ms)[0m  SELECT "incidents".* FROM "incidents"
+  Rendered incidents/index.html.erb within layouts/application (3474.2ms)
+Completed 200 OK in 3692ms (Views: 3679.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/application.self-7002462b65707699ebdb7bf2ebeeb9245126317b67cc45ac20defbaf78b68a48.css?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/dataTables/jquery.dataTables.self-770bf6f5f52c93784a25c3c866719f24d091a3f864c36850a7d338b58bbed52c.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/incidents.self-33ec8aa079233b179b9d080dc03ceb8a0eecbe8680e32a46656c86e9314a0fec.css?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/dataTables/bootstrap/3/jquery.dataTables.bootstrap.self-447fa22a7aa12f01eaf2d37b45bd9b5321653e6629d888973a478ba856099083.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/table.self-c949494127f7a135716267499bda8dd3e7f108d54d672ed681d0a60904fc676a.css?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/assets/local_time.self-128a04d66b2846a17e046fdf49e35ae00618c9e472c0021c2f949a8d17f7a9a8.js?body=1" for ::1 at 2016-02-20 15:53:38 -0500
+
+
+Started GET "/" for ::1 at 2016-02-20 15:54:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IncidentsController#index as HTML
+  [1m[35mIncident Load (0.5ms)[0m  SELECT "incidents".* FROM "incidents"
+  Rendered incidents/index.html.erb within layouts/application (266.6ms)
+Completed 200 OK in 407ms (Views: 394.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-20 15:54:50 -0500
+Processing by IncidentsController#index as HTML
+  [1m[36mIncident Load (0.3ms)[0m  [1mSELECT "incidents".* FROM "incidents"[0m
+  Rendered incidents/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 77ms (Views: 76.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-20 15:55:01 -0500
+Processing by IncidentsController#index as HTML
+  [1m[35mIncident Load (0.4ms)[0m  SELECT "incidents".* FROM "incidents"
+  Rendered incidents/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 72ms (Views: 69.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-7002462b65707699ebdb7bf2ebeeb9245126317b67cc45ac20defbaf78b68a48.css?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/incidents.self-33ec8aa079233b179b9d080dc03ceb8a0eecbe8680e32a46656c86e9314a0fec.css?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/dataTables/extras/dataTables.responsive.self-3b033fbd54ae6162cef0be53220e244b74e171a9cc97f05e05f804646898a1f9.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/dataTables/bootstrap/3/jquery.dataTables.bootstrap.self-447fa22a7aa12f01eaf2d37b45bd9b5321653e6629d888973a478ba856099083.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/dataTables/jquery.dataTables.self-770bf6f5f52c93784a25c3c866719f24d091a3f864c36850a7d338b58bbed52c.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/table.self-c949494127f7a135716267499bda8dd3e7f108d54d672ed681d0a60904fc676a.css?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/local_time.self-128a04d66b2846a17e046fdf49e35ae00618c9e472c0021c2f949a8d17f7a9a8.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/incidents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/application.self-7c44b34571f9c6f50024ec815db695a00182b9937b48d97c4ac1515ab6b385a0.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/assets/priority.self-657f9af77f78840aeeee34fa662f9dee2c83d74985e0ecb39a868c190726023f.js?body=1" for ::1 at 2016-02-20 15:55:01 -0500
+
+
+Started GET "/" for ::1 at 2016-02-20 15:55:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IncidentsController#index as HTML
+  [1m[35mIncident Load (0.6ms)[0m  SELECT "incidents".* FROM "incidents"
+  Rendered incidents/index.html.erb within layouts/application (217.3ms)
+Completed 200 OK in 352ms (Views: 339.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/application.self-7002462b65707699ebdb7bf2ebeeb9245126317b67cc45ac20defbaf78b68a48.css?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/dataTables/extras/dataTables.responsive.self-3b033fbd54ae6162cef0be53220e244b74e171a9cc97f05e05f804646898a1f9.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/incidents.self-33ec8aa079233b179b9d080dc03ceb8a0eecbe8680e32a46656c86e9314a0fec.css?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/dataTables/bootstrap/3/jquery.dataTables.bootstrap.self-447fa22a7aa12f01eaf2d37b45bd9b5321653e6629d888973a478ba856099083.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/dataTables/jquery.dataTables.self-770bf6f5f52c93784a25c3c866719f24d091a3f864c36850a7d338b58bbed52c.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/table.self-c949494127f7a135716267499bda8dd3e7f108d54d672ed681d0a60904fc676a.css?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/local_time.self-128a04d66b2846a17e046fdf49e35ae00618c9e472c0021c2f949a8d17f7a9a8.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/incidents.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/application.self-7c44b34571f9c6f50024ec815db695a00182b9937b48d97c4ac1515ab6b385a0.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
+
+
+Started GET "/assets/priority.self-657f9af77f78840aeeee34fa662f9dee2c83d74985e0ecb39a868c190726023f.js?body=1" for ::1 at 2016-02-20 15:55:38 -0500
