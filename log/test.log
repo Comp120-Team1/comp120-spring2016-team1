@@ -1,0 +1,103 @@
+  [1m[36m (123.6ms)[0m  [1mDROP DATABASE IF EXISTS "incidents_test"[0m
+  [1m[35m (251.3ms)[0m  CREATE DATABASE "incidents_test" ENCODING = 'unicode'
+  [1m[36mSQL (1.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (34.3ms)[0m  CREATE TABLE "incidents" ("id" serial primary key, "priority" integer, "dept_id" integer, "person_id" integer, "subject" character varying(100), "location_of_incident" character varying(100), "time_of_incident" timestamp, "additional_details" character varying(1000), "progress" integer, "public" boolean, "picture_url" character varying(200), "video_url" character varying(200), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (5.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160207170957')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  ALTER TABLE "incidents" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "incidents"
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "incidents" ("priority", "dept_id", "person_id", "subject", "location_of_incident", "time_of_incident", "additional_details", "progress", "public", "picture_url", "video_url", "created_at", "updated_at", "id") VALUES (1, 1, 1, 'MyString', 'MyString', '2016-02-07 12:09:57.000000', 'MyString', 1, 'f', 'MyString', 'MyString', '2016-02-16 21:31:39', '2016-02-16 21:31:39', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "incidents" ("priority", "dept_id", "person_id", "subject", "location_of_incident", "time_of_incident", "additional_details", "progress", "public", "picture_url", "video_url", "created_at", "updated_at", "id") VALUES (1, 1, 1, 'MyString', 'MyString', '2016-02-07 12:09:57.000000', 'MyString', 1, 'f', 'MyString', 'MyString', '2016-02-16 21:31:39', '2016-02-16 21:31:39', 298486374)
+  [1m[36m (4.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "incidents" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+IncidentsControllerTest: test_should_update_incident
+----------------------------------------------------
+  [1m[35mIncident Load (0.3ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = $1 LIMIT 1  [["id", 980190962]]
+Processing by IncidentsController#update as HTML
+  Parameters: {"incident"=>{"additional_details"=>"MyString", "dept_id"=>"1", "location_of_incident"=>"MyString", "person_id"=>"1", "picture_url"=>"MyString", "priority"=>"1", "progress"=>"1", "public"=>false, "subject"=>"MyString", "time_of_incident"=>"2016-02-07 12:09:57 UTC", "video_url"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mIncident Load (0.3ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = $1 LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/incidents/980190962
+Completed 302 Found in 14ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------
+IncidentsControllerTest: test_should_get_edit
+---------------------------------------------
+  [1m[35mIncident Load (0.3ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = $1 LIMIT 1  [["id", 980190962]]
+Processing by IncidentsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mIncident Load (0.4ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = $1 LIMIT 1[0m  [["id", 980190962]]
+  Rendered incidents/_form.html.erb (74.7ms)
+  Rendered incidents/edit.html.erb within layouts/application (88.2ms)
+Completed 500 Internal Server Error in 2414ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------
+IncidentsControllerTest: test_should_show_incident
+--------------------------------------------------
+  [1m[35mIncident Load (0.3ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = $1 LIMIT 1  [["id", 980190962]]
+Processing by IncidentsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mIncident Load (0.3ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = $1 LIMIT 1[0m  [["id", 980190962]]
+  Rendered incidents/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+IncidentsControllerTest: test_should_get_new
+--------------------------------------------
+  [1m[35mIncident Load (0.3ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = $1 LIMIT 1  [["id", 980190962]]
+Processing by IncidentsController#new as HTML
+  Rendered incidents/_form.html.erb (8.6ms)
+  Rendered incidents/new.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+IncidentsControllerTest: test_should_get_index
+----------------------------------------------
+  [1m[36mIncident Load (0.1ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = $1 LIMIT 1[0m  [["id", 980190962]]
+Processing by IncidentsController#index as HTML
+  [1m[35mIncident Load (0.3ms)[0m  SELECT "incidents".* FROM "incidents"
+  Rendered incidents/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------------
+IncidentsControllerTest: test_should_destroy_incident
+-----------------------------------------------------
+  [1m[36mIncident Load (0.2ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = $1 LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "incidents"
+Processing by IncidentsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mIncident Load (0.2ms)[0m  [1mSELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = $1 LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "incidents" WHERE "incidents"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/incidents
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "incidents"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+IncidentsControllerTest: test_should_create_incident
+----------------------------------------------------
+  [1m[35mIncident Load (0.2ms)[0m  SELECT  "incidents".* FROM "incidents" WHERE "incidents"."id" = $1 LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "incidents"[0m
+Processing by IncidentsController#create as HTML
+  Parameters: {"incident"=>{"additional_details"=>"MyString", "dept_id"=>"1", "location_of_incident"=>"MyString", "person_id"=>"1", "picture_url"=>"MyString", "priority"=>"1", "progress"=>"1", "public"=>false, "subject"=>"MyString", "time_of_incident"=>"2016-02-07 12:09:57 UTC", "video_url"=>"MyString"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "incidents" ("priority", "dept_id", "person_id", "subject", "location_of_incident", "time_of_incident", "additional_details", "progress", "public", "picture_url", "video_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["priority", 1], ["dept_id", 1], ["person_id", 1], ["subject", "MyString"], ["location_of_incident", "MyString"], ["time_of_incident", "2016-02-07 12:09:57.000000"], ["additional_details", "MyString"], ["progress", 1], ["public", "f"], ["picture_url", "MyString"], ["video_url", "MyString"], ["created_at", "2016-02-16 21:31:41.799434"], ["updated_at", "2016-02-16 21:31:41.799434"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/incidents/980190963
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "incidents"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
