@@ -36,6 +36,31 @@ class IncidentsControllerTest < ActionController::TestCase
     assert_redirected_to incident_path(assigns(:incident))
   end
 
+
+  test "should create incident with correct params" do
+    assert_difference('Incident.count') do
+      post :create, incident: { 
+          additional_details: @incident.additional_details,
+          location_of_incident: @incident.location_of_incident,
+          priority: @incident.priority,
+          progress: @incident.progress,
+          public: @incident.public,
+          subject: @incident.subject,
+          time_of_incident: @incident.time_of_incident,
+      }
+    end
+
+    assert_redirected_to incident_path(assigns(:incident))
+  end
+
+  test "should fail to create incident with wrong params" do
+    assert_no_difference('Incident.count') do
+      post :create, incident: { 
+          priority: @incident.priority,
+      }
+    end
+  end
+
   test "should show incident" do
     get :show, id: @incident
     assert_response :success
@@ -70,4 +95,11 @@ class IncidentsControllerTest < ActionController::TestCase
 
     assert_redirected_to incidents_path
   end
+
+  test "should have title" do
+    get :index
+    assert_select 'title', "Incidents"
+  end
+
+
 end

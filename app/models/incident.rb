@@ -1,6 +1,5 @@
 class Incident < ActiveRecord::Base
     validates :priority, presence: true
-    validates :dept_id, presence: true
     validates :subject, presence: true
     validates :location_of_incident, presence: true
     validates :time_of_incident, presence: true
