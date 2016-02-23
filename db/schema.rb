@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216220944) do
+ActiveRecord::Schema.define(version: 20160223205314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 20160216220944) do
     t.datetime "time_of_incident"
     t.string   "additional_details",   limit: 1000
     t.integer  "progress",                          default: 0
-    t.boolean  "public"
+    t.boolean  "public",                            default: true
     t.string   "picture_url",          limit: 200
     t.string   "video_url",            limit: 200
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
   end
 
 end
