@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class IncidentTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+    test "should not save incident without location" do
+        assert true
+    end
 end

@@ -18,7 +18,19 @@ class IncidentsControllerTest < ActionController::TestCase
 
   test "should create incident" do
     assert_difference('Incident.count') do
-      post :create, incident: { additional_details: @incident.additional_details, dept_id: @incident.dept_id, location_of_incident: @incident.location_of_incident, person_id: @incident.person_id, picture_url: @incident.picture_url, priority: @incident.priority, progress: @incident.progress, public: @incident.public, subject: @incident.subject, time_of_incident: @incident.time_of_incident, video_url: @incident.video_url }
+      post :create, incident: { 
+          additional_details: @incident.additional_details,
+          dept_id: @incident.dept_id,
+          location_of_incident: @incident.location_of_incident,
+          person_id: @incident.person_id,
+          picture_url: @incident.picture_url,
+          priority: @incident.priority,
+          progress: @incident.progress,
+          public: @incident.public,
+          subject: @incident.subject,
+          time_of_incident: @incident.time_of_incident,
+          video_url: @incident.video_url
+      }
     end
 
     assert_redirected_to incident_path(assigns(:incident))
@@ -35,7 +47,19 @@ class IncidentsControllerTest < ActionController::TestCase
   end
 
   test "should update incident" do
-    patch :update, id: @incident, incident: { additional_details: @incident.additional_details, dept_id: @incident.dept_id, location_of_incident: @incident.location_of_incident, person_id: @incident.person_id, picture_url: @incident.picture_url, priority: @incident.priority, progress: @incident.progress, public: @incident.public, subject: @incident.subject, time_of_incident: @incident.time_of_incident, video_url: @incident.video_url }
+    patch :update, id: @incident, incident: {
+        additional_details: @incident.additional_details,
+        dept_id: @incident.dept_id,
+        location_of_incident: @incident.location_of_incident,
+        person_id: @incident.person_id,
+        picture_url: @incident.picture_url,
+        priority: @incident.priority,
+        progress: @incident.progress,
+        public: @incident.public,
+        subject: @incident.subject,
+        time_of_incident: @incident.time_of_incident,
+        video_url: @incident.video_url 
+    }
     assert_redirected_to incident_path(assigns(:incident))
   end
 
