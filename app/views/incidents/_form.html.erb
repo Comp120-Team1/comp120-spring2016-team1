@@ -20,8 +20,6 @@
   <div class="field form-group col-md-6 col-md-offset-0">
     <%= f.label :priority %><br>
     <%= f.range_field :priority, :min=>0, :max=>10, :class=>"slide", :id=>"slider1"%>
-    <%= link_to "4", {:action => "new", :id => 1}, class: "btn btn-default",
-            role: "button" %>
   </div>
 
   <div class="field form-group col-md-7" >
@@ -45,9 +43,11 @@
   </div>
 
   <div class="field form-group col-md-5">
-    <%= f.label :public%>
     <%= f.label :public do %>
-      <%= f.check_box :public, :checked => true %>
+            <%= f.check_box :public, :checked => true,
+                        :data => { 'on-text'=>'PUBLIC', 'off-text'=>'PRIVATE' }
+                %>
+
     <% end %>
   </div>
 
