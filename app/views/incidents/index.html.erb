@@ -20,31 +20,28 @@
     <table id="incident-list" class="display table"  >
       <thead>
         <tr>
-          <th>Time of incident</th>
           <th>Priority</th>
           <th>Subject</th>
           <th>Location of incident</th>
-          <!--<th>Additional details</th>-->
-          <th>Progress</th>
+          <th>Time of incident</th>
           <th>Dept</th>
           <th>Actions</th>
-          <!--<th colspan="2"></th>-->
+          <th>Progress</th>
         </tr>
       </thead>
 
       <tbody>
         <% @incidents.each do |incident| %>
           <tr>
-            <td><%= local_time_ago(incident.time_of_incident) %></td>
             <td><%= incident.priority %></td>
             <td><%= incident.subject %></td>
             <td><%= incident.location_of_incident %></td>
-            <!--<td><%= incident.additional_details %></td>-->
-            <td><%= incident.progress %></td>
+            <td><%= local_time_ago(incident.time_of_incident) %></td>
             <td><%= incident.dept_id %></td>
             <td> <%= link_to 'Edit', edit_incident_path(incident), :class => 'btn btn-default' %>
                 <%= link_to 'Show', incident, :class => 'btn btn-default' %>
-                </td>
+            </td>
+            <td><%= incident.progress %></td>
           </tr>
         <% end %>
       </tbody>
