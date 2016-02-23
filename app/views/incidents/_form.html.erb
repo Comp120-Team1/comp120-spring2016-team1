@@ -20,6 +20,8 @@
   <div class="field form-group col-md-6 col-md-offset-0">
     <%= f.label :priority %><br>
     <%= f.range_field :priority, :min=>0, :max=>10, :class=>"slide", :id=>"slider1"%>
+    <%= link_to "4", {:action => "new", :id => 1}, class: "btn btn-default",
+            role: "button" %>
   </div>
 
   <div class="field form-group col-md-7" >

@@ -19,5 +19,7 @@
 //= require dataTables/jquery.dataTables
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require_tree 
+//= require_tree
 //= require local_time
+//= require moment
+//= require bootstrap-datetimepicker
