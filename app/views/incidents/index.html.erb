@@ -1,16 +1,4 @@
-<script type="text/javascript">
-	$( document ).ready(function() {
-		highlight_priorities();
-	})
-
-  $(document).ready( function() {
-    var table = $('#incident-list').DataTable({
-       "dom": 'l<"filtering"f>t<"pagination"p>',
-        responsive: true,
-        "oLanguage": { "sSearch": "Filter: " }
-    });
-  });
-</script>
+<%= javascript_include_tag 'table' %>
 <%= stylesheet_link_tag "incidents" %>
 <%= stylesheet_link_tag "table" %>
 
