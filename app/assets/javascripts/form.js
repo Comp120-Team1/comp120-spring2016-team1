@@ -5,6 +5,6 @@ function init_form() {
     });
     $('input:checkbox').bootstrapSwitch();
     $('.datetimepicker').val(moment().format("YYYY-MM-DD hh:mm A"));
-    $('.selectpicker').selectpicker();
+    // $('.selectpicker').selectpicker();
   });
 }
