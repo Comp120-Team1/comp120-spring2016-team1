@@ -1,4 +1,7 @@
 class Incident < ActiveRecord::Base
+    def new
+      response.headers['X-Csrf-Token'] = form_authenticity_token
+    end
     belongs_to :incident_category
     validates :priority, presence: true
     validates :subject, presence: true
