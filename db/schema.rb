@@ -11,25 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223205314) do
+ActiveRecord::Schema.define(version: 20160224014826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "incident_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "incidents_id"
+  end
+
+  add_index "incident_categories", ["incidents_id"], name: "index_incident_categories_on_incidents_id", using: :btree
 
   create_table "incidents", force: :cascade do |t|
     t.integer  "priority"
     t.integer  "dept_id"
     t.integer  "person_id"
-    t.string   "subject",              limit: 100
-    t.string   "location_of_incident", limit: 100
+    t.string   "subject",                limit: 100
+    t.string   "location_of_incident",   limit: 100
     t.datetime "time_of_incident"
-    t.string   "additional_details",   limit: 1000
-    t.integer  "progress",                          default: 0
-    t.boolean  "public",                            default: true
-    t.string   "picture_url",          limit: 200
-    t.string   "video_url",            limit: 200
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
+    t.string   "additional_details",     limit: 1000
+    t.integer  "progress",                            default: 0
+    t.boolean  "public",                              default: true
+    t.string   "picture_url",            limit: 200
+    t.string   "video_url",              limit: 200
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.integer  "incident_category_id"
+    t.integer  "incident_categories_id"
   end
+
+  add_index "incidents", ["incident_categories_id"], name: "index_incidents_on_incident_categories_id", using: :btree
 
 end

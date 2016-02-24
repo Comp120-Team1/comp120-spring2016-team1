@@ -16,7 +16,7 @@
     <%= f.label :subject %><br>
     <%= f.text_field :subject, :class => "form-control"%>
   </div>
-  
+
   <br/>
   <div class="field form-group col-md-6 col-md-offset-0 dropdown">
     <%= f.label :priority %>
@@ -40,8 +40,8 @@
   </div>
 
   <div class="field form-group col-md-5">
-    <%= f.label :dept_id, 'Intended Department' %><br>
-    <%= f.number_field :dept_id, :class => "form-control"%>
+    <%= f.label :incident_category_id, 'Intended Department' %><br>
+    <%= collection_select(:incident, :incident_category_id, IncidentCategory.all, :id, :name, {:prompt => false}) %>
   </div>
 
   <div class="field form-group col-md-5">

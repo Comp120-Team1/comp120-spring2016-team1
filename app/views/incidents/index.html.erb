@@ -24,7 +24,7 @@
           <th>Subject</th>
           <th>Location of incident</th>
           <th>Time of incident</th>
-          <th>Dept</th>
+          <th>Category</th>
           <th>Actions</th>
           <th>Progress</th>
         </tr>
@@ -37,7 +37,7 @@
             <td><%= incident.subject %></td>
             <td><%= incident.location_of_incident %></td>
             <td><%= local_time_ago(incident.time_of_incident) %></td>
-            <td><%= incident.dept_id %></td>
+            <td><%= incident.incident_category.name if incident.incident_category %></td>
             <td> <%= link_to 'Edit', edit_incident_path(incident), :class => 'btn btn-default' %>
                 <%= link_to 'Show', incident, :class => 'btn btn-default' %>
             </td>

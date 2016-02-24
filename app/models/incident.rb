@@ -1,4 +1,5 @@
 class Incident < ActiveRecord::Base
+    belongs_to :incident_category
     validates :priority, presence: true
     validates :subject, presence: true
     validates :location_of_incident, presence: true
