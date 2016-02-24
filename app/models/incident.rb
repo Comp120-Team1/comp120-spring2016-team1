@@ -5,4 +5,25 @@ class Incident < ActiveRecord::Base
     validates :time_of_incident, presence: true
     validates :progress, presence: true
     validates :public, presence: true
+    def getPriority priority
+      if priority <= 0
+        "!"
+      elsif priority == 1
+        "!!"
+      elsif priority >= 2
+        "!!!"
+      end
+    end
+
+    def getProgress progress
+      if progress <= 0
+        "Reported"
+      elsif progress == 1
+        "Processing"
+      elsif progress == 2
+        "In Progress"
+      elsif progress >= 3
+        "Resolved"
+      end
+    end
 end

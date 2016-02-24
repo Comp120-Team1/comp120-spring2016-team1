@@ -9,7 +9,7 @@
 
 <p>
   <strong>Priority:</strong>
-  <%= @incident.priority %>
+  <%= @incident.getPriority(@incident.priority) %>
 </p>
 
 <p>
@@ -35,7 +35,7 @@
 
 <p>
   <strong>Progress:</strong>
-  <%= @incident.progress %>
+  <%= @incident.getProgress(@incident.progress) %>
 </p>
 
 <p>
