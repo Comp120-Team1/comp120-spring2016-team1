@@ -11,3 +11,4 @@ open("db/incident_categories.txt") do |categories|
     IncidentCategory.create!(:name => category)
   end
 end
+Incident.delete_all
