@@ -6,11 +6,11 @@ class Incident < ActiveRecord::Base
     validates :progress, presence: true
     validates :public, presence: true
     def getPriority priority
-      if priority <= 0
+      if priority <= 1
         "!"
-      elsif priority == 1
+      elsif priority == 2
         "!!"
-      elsif priority >= 2
+      elsif priority >= 3
         "!!!"
       end
     end
