@@ -48,7 +48,7 @@ class IncidentsControllerTest < ActionController::TestCase
           progress: @incident.progress,
           public: @incident.public,
           subject: @incident.subject,
-          time_of_incident: @incident.time_of_incident,
+          time_of_incident: @incident.time_of_incident
       }
     end
 
@@ -59,6 +59,21 @@ class IncidentsControllerTest < ActionController::TestCase
     assert_no_difference('Incident.count') do
       post :create, incident: {
           priority: @incident.priority,
+      }
+    end
+  end
+
+  test "should fail to create incident with invalid category" do
+    assert_no_difference('Incident.count') do
+      post :create, incident: {
+        additional_details: @incident.additional_details,
+        location_of_incident: @incident.location_of_incident,
+        incident_category_id: "CRASH DO IT. I BET YOU WILL",
+        priority: @incident.priority,
+        progress: @incident.progress,
+        public: @incident.public,
+        subject: @incident.subject,
+        time_of_incident: @incident.time_of_incident
       }
     end
   end
