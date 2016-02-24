@@ -118,5 +118,12 @@ class IncidentsControllerTest < ActionController::TestCase
     assert_select 'title', "Incidents"
   end
 
+  test "index page should have the incident table" do
+    get :index
+    assert_select 'div.col-md-10' do
+      assert_select 'table#incident-list'
+    end
+  end
+
 
 end
