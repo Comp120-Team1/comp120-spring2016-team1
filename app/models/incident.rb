@@ -6,7 +6,9 @@ class Incident < ActiveRecord::Base
     validates :progress, presence: true
     validates :public, presence: true
     def getPriority priority
-      if priority <= 1
+      if !priority.is_a? Numeric
+        "Unknown"
+      elsif priority <= 1
         "!"
       elsif priority == 2
         "!!"
@@ -16,7 +18,9 @@ class Incident < ActiveRecord::Base
     end
 
     def getProgress progress
-      if progress <= 0
+      if !progress.is_a? Numeric
+        "Unknown"
+      elsif progress <= 0
         "Reported"
       elsif progress == 1
         "Processing"
