@@ -23,8 +23,8 @@
 
   <div class="field form-group col-md-5">
     <%= f.label :priority %><br>
-    <%= f.select :priority, [['Low','1'],['Medium','2'],['High','3']], {},
-      {class: 'selectpicker'} %>
+    <%= f.select :priority, [['Low','1'],['Medium','2'],['High','3']],
+      {:selected => '2'}, {class: 'selectpicker'} %>
 
   </div>
 
