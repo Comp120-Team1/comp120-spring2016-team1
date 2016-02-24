@@ -40,7 +40,7 @@
             <td><%= incident.location_of_incident %></td>
             <td><%= local_time_ago(incident.created_at) %></td>
             <td><%= local_time_ago(incident.time_of_incident) %></td>
-            <td><%= incident.incident_category.name if incident.incident_category %></td>
+            <td><%= incident.incident_category.name %></td>
             <td> <%= link_to 'Edit', edit_incident_path(incident), :class => 'btn btn-default' %>
                 <%= link_to 'Show', incident, :class => 'btn btn-default' %>
             </td>
