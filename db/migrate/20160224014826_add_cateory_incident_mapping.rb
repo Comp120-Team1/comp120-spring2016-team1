@@ -1,6 +1,5 @@
 class AddCateoryIncidentMapping < ActiveRecord::Migration
   def change
-    add_reference :incidents, :incident_categories, index: true
-    add_reference :incident_categories, :incidents, index: true
+    add_column :incidents, :incident_category_id, :int
   end
 end
