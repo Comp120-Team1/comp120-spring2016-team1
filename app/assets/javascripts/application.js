@@ -24,3 +24,4 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require bootstrap-switch
+//= require bootstrap-select
