@@ -13,6 +13,7 @@
   });
 </script>
 <%= stylesheet_link_tag "incidents" %>
+<%= stylesheet_link_tag "priority" %>
 <%= stylesheet_link_tag "table" %>
 
 
@@ -35,7 +36,7 @@
       <tbody>
         <% @incidents.each do |incident| %>
           <tr>
-            <td><%= incident.getPriority(incident.priority) %></td>
+            <td class="text-center"><%= incident.getPriority(incident.priority) %></td>
             <td><%= incident.subject %></td>
             <td><%= incident.location_of_incident %></td>
             <td><%= local_time_ago(incident.created_at) %></td>
