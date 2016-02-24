@@ -30,5 +30,10 @@
     <%= yield %>
     </div>
 
+    <script>
+      <% if content_for? :js %>
+        <%= yield :js %>
+      <% end %>
+    </script>
 </body>
 </html>

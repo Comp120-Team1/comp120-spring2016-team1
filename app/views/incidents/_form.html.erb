@@ -1,3 +1,7 @@
+<% content_for :js do %>
+  init_form()
+<% end %>
+
 <%= form_for(@incident) do |f| %>
   <% if @incident.errors.any? %>
     <div id="error_explanation">
