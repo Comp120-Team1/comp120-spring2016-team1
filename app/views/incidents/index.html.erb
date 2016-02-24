@@ -7,6 +7,7 @@
     var table = $('#incident-list').DataTable({
        "dom": 'l<"filtering"f>t<"pagination"p>',
         responsive: true,
+        "order": [[3, "desc"], [ 0, "desc" ]],
         "oLanguage": { "sSearch": "Filter: " }
     });
   });
@@ -17,13 +18,14 @@
 
 <p id="notice"><%= notice %></p>
 <div class="col-md-10 col-md-offset-1">
-    <table id="incident-list" class="display table"  >
+    <table id="incident-list" class="table" >
       <thead>
         <tr>
           <th>Priority</th>
           <th>Subject</th>
-          <th>Location of incident</th>
-          <th>Time of incident</th>
+          <th>Location of Incident</th>
+          <th>Time Submitted </th>
+          <th>Time of Incident</th>
           <th>Dept</th>
           <th>Actions</th>
           <th>Progress</th>
@@ -36,6 +38,7 @@
             <td><%= incident.getPriority(incident.priority) %></td>
             <td><%= incident.subject %></td>
             <td><%= incident.location_of_incident %></td>
+            <td><%= local_time_ago(incident.created_at) %></td>
             <td><%= local_time_ago(incident.time_of_incident) %></td>
             <td><%= incident.dept_id %></td>
             <td> <%= link_to 'Edit', edit_incident_path(incident), :class => 'btn btn-default' %>
