@@ -3,6 +3,7 @@ require 'test_helper'
 class IncidentsControllerTest < ActionController::TestCase
   setup do
     @incident = incidents(:one)
+    @incident_category = incident_categories(:one)
   end
 
   test "should get index" do
@@ -18,9 +19,9 @@ class IncidentsControllerTest < ActionController::TestCase
 
   test "should create incident" do
     assert_difference('Incident.count') do
-      post :create, incident: { 
+      post :create, incident: {
           additional_details: @incident.additional_details,
-          dept_id: @incident.dept_id,
+          incident_category_id: @incident.incident_category_id,
           location_of_incident: @incident.location_of_incident,
           person_id: @incident.person_id,
           picture_url: @incident.picture_url,
@@ -39,9 +40,10 @@ class IncidentsControllerTest < ActionController::TestCase
 
   test "should create incident with correct params" do
     assert_difference('Incident.count') do
-      post :create, incident: { 
+      post :create, incident: {
           additional_details: @incident.additional_details,
           location_of_incident: @incident.location_of_incident,
+          incident_category_id: @incident.incident_category_id,
           priority: @incident.priority,
           progress: @incident.progress,
           public: @incident.public,
@@ -55,7 +57,7 @@ class IncidentsControllerTest < ActionController::TestCase
 
   test "should fail to create incident with wrong params" do
     assert_no_difference('Incident.count') do
-      post :create, incident: { 
+      post :create, incident: {
           priority: @incident.priority,
       }
     end
@@ -74,7 +76,7 @@ class IncidentsControllerTest < ActionController::TestCase
   test "should update incident" do
     patch :update, id: @incident, incident: {
         additional_details: @incident.additional_details,
-        dept_id: @incident.dept_id,
+        incident_category_id: @incident_category,
         location_of_incident: @incident.location_of_incident,
         person_id: @incident.person_id,
         picture_url: @incident.picture_url,
@@ -83,7 +85,7 @@ class IncidentsControllerTest < ActionController::TestCase
         public: @incident.public,
         subject: @incident.subject,
         time_of_incident: @incident.time_of_incident,
-        video_url: @incident.video_url 
+        video_url: @incident.video_url
     }
     assert_redirected_to incident_path(assigns(:incident))
   end

@@ -5,3 +5,9 @@ one:
 
 two:
   name: MyString
+
+fire:
+  name: FIRE
+
+water:
+  name: WATER

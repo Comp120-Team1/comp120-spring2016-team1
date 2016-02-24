@@ -6,6 +6,7 @@ class Incident < ActiveRecord::Base
     validates :time_of_incident, presence: true
     validates :progress, presence: true
     validates :public, presence: true
+    validates :incident_category_id, presence: true
     def getPriority priority
       if !priority.is_a? Numeric
         "Unknown"

@@ -2,9 +2,9 @@
 
 one:
   priority: 1
-  dept_id: 1
+  incident_category: fire
   person_id: 1
-  subject: MyString
+  subject: MyStringOne
   location_of_incident: MyString
   time_of_incident: 2016-02-07 12:09:57
   additional_details: MyString
@@ -12,10 +12,11 @@ one:
   public: true
   picture_url: MyString
   video_url: MyString
+  incident_category_id: 0
 
 two:
   priority: 1
-  dept_id: 1
+  incident_category: water
   person_id: 1
   subject: MyString
   location_of_incident: MyString
@@ -25,4 +26,4 @@ two:
   public: false
   picture_url: MyString
   video_url: MyString
-
+  incident_category_id: 0
