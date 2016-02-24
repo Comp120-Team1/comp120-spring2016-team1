@@ -41,7 +41,7 @@
 
   <div class="field form-group col-md-5">
     <%= f.label :incident_category_id, 'Intended Department' %><br>
-    <%= collection_select(:incident, :incident_category_id, IncidentCategory.all, :id, :name, {:prompt => false}) %>
+    <%= collection_select(:incident, :incident_category, IncidentCategory.all, :id, :name, {:prompt => false}) %>
   </div>
 
   <div class="field form-group col-md-5">

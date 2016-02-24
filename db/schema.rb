@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20160224014826) do
     t.string   "video_url",              limit: 200
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
-    t.integer  "incident_category_id"
     t.integer  "incident_categories_id"
   end
 
