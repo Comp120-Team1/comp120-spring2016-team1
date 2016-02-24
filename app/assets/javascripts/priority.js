@@ -9,6 +9,8 @@ function highlight_priorities() {
 			$(this).addClass("danger")
 		} else if (priority >= 5) {
 			$(this).addClass("warning")
+		} else if (priority >= 1) {
+			$(this).addClass("success")
 		}
 	   //if ($(this).find('td:first-child').text().toUpperCase().match(text.toUpperCase()))
 			   //$(this).css({ background: "#FC6" });

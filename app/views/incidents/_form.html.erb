@@ -16,10 +16,12 @@
     <%= f.label :subject %><br>
     <%= f.text_field :subject, :class => "form-control"%>
   </div>
+  
+  <br/>
+  <div class="field form-group col-md-6 col-md-offset-0 dropdown">
+    <%= f.label :priority %>
+    <%= f.select :priority, [['!','1'],['!!','2'],['!!!','3']], :class => 'dropdown' %>
 
-  <div class="field form-group col-md-6 col-md-offset-0">
-    <%= f.label :priority %><br>
-    <%= f.range_field :priority, :min=>0, :max=>10, :class=>"slide", :id=>"slider1"%>
   </div>
 
   <div class="field form-group col-md-7" >
