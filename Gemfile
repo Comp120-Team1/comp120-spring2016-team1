@@ -38,6 +38,9 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 # for bootstrap switch buttons
 gem "bootstrap-switch-rails"
 
+# for bootstrap-select
+gem 'bootstrap-select-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

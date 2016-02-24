@@ -12,15 +12,15 @@
   <% end %>
 
 <div class="col-md-10 col-md-offset-1">
-  <div class="field form-group col-md-6 col-md-offset-0">
+  <div class="field form-group col-md-7">
     <%= f.label :subject %><br>
     <%= f.text_field :subject, :class => "form-control"%>
   </div>
 
-  <br/>
-  <div class="field form-group col-md-6 col-md-offset-0 dropdown">
-    <%= f.label :priority %>
-    <%= f.select :priority, [['!','1'],['!!','2'],['!!!','3']], :class => 'dropdown' %>
+  <div class="field form-group col-md-5">
+    <%= f.label :priority %><br>
+    <%= f.select :priority, [['Low','1'],['Medium','2'],['High','3']], {},
+      {class: 'selectpicker'} %>
 
   </div>
 
@@ -41,7 +41,10 @@
 
   <div class="field form-group col-md-5">
     <%= f.label :incident_category_id, 'Intended Department' %><br>
-    <%= collection_select(:incident, :incident_category_id, IncidentCategory.all, :id, :name, {:prompt => false}) %>
+    <%= collection_select(:incident, :incident_category_id, IncidentCategory.all,
+                          :id, :name, {:prompt => false},
+                          {:class => "selectpicker",
+                           :'data-live-search' => "true"}) %>
   </div>
 
   <div class="field form-group col-md-5">
