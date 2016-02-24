@@ -5,7 +5,7 @@
 <%= form_for(@incident) do |f| %>
   <% if @incident.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
+      <h4 class='text-danger'><%= pluralize(@incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
 
       <ul>
       <% @incident.errors.full_messages.each do |message| %>
