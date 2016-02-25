@@ -125,5 +125,16 @@ class IncidentsControllerTest < ActionController::TestCase
     end
   end
 
+  test "incident table has 8 columns" do
+    get :index
+    assert_select "div.col-md-10" do
+      assert_select 'table#incident-list' do
+        assert_select 'tr' do
+          assert_select 'td', 16
+        end
+      end
+    end
+  end
+
 
 end
