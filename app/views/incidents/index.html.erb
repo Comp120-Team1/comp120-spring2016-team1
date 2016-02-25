@@ -1,12 +1,12 @@
 <script type="text/javascript">
 $(document).ready( function() {
-  highlight_priorities()
   var table = $('#incident-list').DataTable({
     "dom": 'l<"filtering"f>t<"pagination"p>',
     responsive: true,
     "order": [[0, "desc"], [ 3, "desc" ]],
     "oLanguage": { "sSearch": "Filter: " }
   });
+  highlight_priorities()
 });
 </script>
 <%= stylesheet_link_tag "incidents" %>
