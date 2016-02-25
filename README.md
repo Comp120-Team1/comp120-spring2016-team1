@@ -8,13 +8,13 @@ Danielle Zelin, Michael Seltzer, Derek Benson, Zach Kirsch.
 
 [Production app](https://incidentreporter.herokuapp.com)
 
-### Versions
+## Versions
 
 Ruby  2.3.0p0
 
 Rails 4.2.5.1
 
-### Choice of Ruby Framework: Ruby on Rails
+## Choice of Ruby Framework: Ruby on Rails
 
 We chose to use Ruby on Rails. There are many benefits of Rails. First of all, Rails' configuration conventions help speed up the development provess and allow for the progammers to avoid spending a lot of time working on the configuration settings. Secondly, it is a popular, open source web framework so there is a large amount of information on the internet about working with Rails. It is object oriented, handles changes very easily, and it has a very good testing framework.
 
@@ -28,7 +28,7 @@ https://bitzesty.com/2014/01/10/ruby-on-rails-what-it-is-and-why-we-use-it-for-w
 
 http://codefol.io/posts/Why-Rails-and-not-Sinatra-or-Node-js
 
-### Ruby Packages
+## Ruby Packages
 
 - pg, ~> 0.18
   - Use postgresql as the database for Active Record
@@ -64,19 +64,18 @@ http://codefol.io/posts/Why-Rails-and-not-Sinatra-or-Node-js
 - bootstrap-select-rails, "~> 1.6"
   - for bootstrap-select dropdowns
 
-### Other APIs or dependencies
+## Other APIs or dependencies
 
 We are using the ruby gem jquery-datatables-rails plugin to display a table with pagination. The plugin will allow us to show many incidents in a filtered, fast way. The datatable plugin was used as Tina explains that there are "Over 75,000 active people" at the institution who all may have multiple incidents to report
 
-### Choice of Database: PostgreSQL
+## Choice of Database: PostgreSQL
 
 We chose postgresql because it is a widely used database that has large amounts of documentation available online. It has informative error messages. It is capable of handling many tasks efficiently. It has "complete support for reliable transactions, i.e. Atomicity, Consistency, Isolation, Durability (ACID)." Because postgresql is highly used and common, when issues appear it is likely that there will be a large amount of documentation to help with problems that arise. It supports many data types. Lastly, there are many thrid party libraries made to help Postgres be simple to use.
 
-Sources:
-
+Source:
 https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems
 
-### Choice of Test Framework: MiniTest
+## Choice of Test Framework: MiniTest
 
 We chose MiniTest as our testing framework for a few reasons:
 
@@ -85,7 +84,7 @@ We chose MiniTest as our testing framework for a few reasons:
 - There is a lot of existing support online
 - It is built within the Rails distribution itself, so it incredibly easy to integrate and no magic handshaking is required
 
-### Scaling
+## Scaling
 
 Once deployed, this app could receive 15,000 unique visits per day. At our current level, this app can handle a few thousand hits before the server is overloaded (found as a result of our stress testing). To improve this, it will be necessary to decrease the load of each visit. We will do this by:
 
