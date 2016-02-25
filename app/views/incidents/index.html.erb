@@ -1,24 +1,23 @@
 <script type="text/javascript">
-	$( document ).ready(function() {
-		highlight_priorities();
-	})
-
   $(document).ready( function() {
-    var table = $('#incident-list').DataTable({
-       "dom": 'l<"filtering"f>t<"pagination"p>',
-        responsive: true,
-        "order": [[3, "desc"], [ 0, "desc" ]],
-        "oLanguage": { "sSearch": "Filter: " }
-    });
+    highlight_priorities(function() {
+      var table = $('#incident-list').DataTable({
+         "dom": 'l<"filtering"f>t<"pagination"p>',
+          responsive: true,
+          "order": [[0, "desc"], [ 3, "desc" ]],
+          "oLanguage": { "sSearch": "Filter: " }
+      });
+    })
   });
 </script>
 <%= stylesheet_link_tag "incidents" %>
+<%= stylesheet_link_tag "priority" %>
 <%= stylesheet_link_tag "table" %>
 
 
 <p id="notice"><%= notice %></p>
 <div class="col-md-10 col-md-offset-1">
-    <table id="incident-list" class="table" >
+    <table id="incident-list" class="table dt-responsive" >
       <thead>
         <tr>
           <th>Priority</th>
@@ -35,7 +34,7 @@
       <tbody>
         <% @incidents.each do |incident| %>
           <tr>
-            <td><%= incident.getPriority(incident.priority) %></td>
+            <td class="text-center"><%= incident.getPriority(incident.priority) %></td>
             <td><%= incident.subject %></td>
             <td><%= incident.location_of_incident %></td>
             <td><%= local_time_ago(incident.created_at) %></td>

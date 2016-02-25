@@ -1,16 +1,5 @@
-<script type="text/javascript">
-$(document).ready( function() {
-  $('.datetimepicker').datetimepicker({
-    sideBySide: true,
-  });
-    $('input:checkbox').bootstrapSwitch();
-  $('.datetimepicker').val(moment().format("YYYY-MM-DD hh:mm A"));
-});
-</script>
 
 <div class="container">
-
-  <h1>New Incident</h1>
 
   <%= render 'form' %>
 

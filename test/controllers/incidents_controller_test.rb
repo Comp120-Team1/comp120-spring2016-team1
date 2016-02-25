@@ -68,7 +68,7 @@ class IncidentsControllerTest < ActionController::TestCase
       post :create, incident: {
         additional_details: @incident.additional_details,
         location_of_incident: @incident.location_of_incident,
-        incident_category_id: "CRASH DO IT. I BET YOU WILL",
+        incident_category_id: "Invalid Category",
         priority: @incident.priority,
         progress: @incident.progress,
         public: @incident.public,
@@ -118,5 +118,38 @@ class IncidentsControllerTest < ActionController::TestCase
     assert_select 'title', "Incidents"
   end
 
+  test "index page should have the incident table" do
+    get :index
+    assert_select 'div.col-md-10' do
+      assert_select 'table#incident-list'
+    end
+  end
+
+  test "incident table has 8 columns" do
+    get :index
+    assert_select "div.col-md-10" do
+      assert_select 'table#incident-list' do
+        assert_select 'tr' do
+          assert_select 'td', 16
+        end
+      end
+    end
+  end
+
+  test "should show current incident" do
+    get :show, id: @incident
+    assert_select "div.col-md-6" do
+      assert_select "div.panel"
+    end
+  end
+
+  test "should render form" do
+    get :edit, id: @incident
+    assert_select "div.container" do
+      assert_select "div.col-md-10" do 
+        assert_select "div.field"
+      end
+    end
+  end  
 
 end

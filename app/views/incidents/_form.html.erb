@@ -1,46 +1,56 @@
-<%= form_for(@incident) do |f| %>
-  <% if @incident.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
+<% content_for :js do %>
+  init_form()
+<% end %>
 
-      <ul>
-      <% @incident.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= stylesheet_link_tag "form" %>
+
+<% if @incident.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <h4><%= pluralize(@incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
+    <ul>
+    <% @incident.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h1>New Incident</h1>
+
+<%= form_for(@incident) do |f| %>
 
 <div class="col-md-10 col-md-offset-1">
   <div class="field form-group col-md-7">
-    <%= f.label :subject %><br>
+    <%= f.label :subject, :class => 'required' %>
     <%= f.text_field :subject, :class => "form-control"%>
   </div>
 
   <div class="field form-group col-md-5">
-    <%= f.label :priority %><br>
-    <%= f.select :priority, [['Low','1'],['Medium','2'],['High','3']], {},
-      {class: 'selectpicker'} %>
+    <%= f.label :priority, :class => 'required' %><br>
+    <%= f.select :priority, [['Low','1'],['Medium','2'],['High','3']],
+      {:selected => '2'}, {class: 'selectpicker'} %>
 
   </div>
 
   <div class="field form-group col-md-7" >
-    <%= f.label :additional_details %><br>
+    <%= f.label :additional_details, "Additional Details" %>
     <%= f.text_area :additional_details, :class => "form-control", :rows => "10"%>
   </div>
 
   <div class="field form-group col-md-5">
-    <%= f.label :location_of_incident %><br>
+    <%= f.label :location_of_incident, "Location of Incident",
+        :class => 'required' %>
     <%= f.text_field :location_of_incident, :class => "form-control"%>
   </div>
 
   <div class="field form-group col-md-5">
-    <%= f.label :time_of_incident %><br>
+    <%= f.label :time_of_incident, "Time of Incident", :class => 'required' %>
     <%= f.datetime_select :time_of_incident, :class => "form-control"%>
   </div>
 
   <div class="field form-group col-md-5">
-    <%= f.label :incident_category_id, 'Intended Department' %><br>
+      <%= f.label :incident_category_id, 'Intended Department',
+        :class => 'required' %>
     <%= collection_select(:incident, :incident_category_id, IncidentCategory.all,
                           :id, :name, {:prompt => false},
                           {:class => "selectpicker",
