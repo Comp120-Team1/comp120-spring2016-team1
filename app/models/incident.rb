@@ -14,12 +14,6 @@ class Incident < ActiveRecord::Base
         0
       else
         priority
-      # elsif priority <= 1
-      #   "Low"
-      # elsif priority == 2
-      #   "Medium"
-      # elsif priority >= 3
-      #   "High"
       end
     end
 
