@@ -1,14 +1,13 @@
 <script type="text/javascript">
-  $(document).ready( function() {
-    highlight_priorities(function() {
-      var table = $('#incident-list').DataTable({
-         "dom": 'l<"filtering"f>t<"pagination"p>',
-          responsive: true,
-          "order": [[0, "desc"], [ 3, "desc" ]],
-          "oLanguage": { "sSearch": "Filter: " }
-      });
-    })
+$(document).ready( function() {
+  highlight_priorities()
+  var table = $('#incident-list').DataTable({
+    "dom": 'l<"filtering"f>t<"pagination"p>',
+    responsive: true,
+    "order": [[0, "desc"], [ 3, "desc" ]],
+    "oLanguage": { "sSearch": "Filter: " }
   });
+});
 </script>
 <%= stylesheet_link_tag "incidents" %>
 <%= stylesheet_link_tag "priority" %>
@@ -17,36 +16,36 @@
 
 <p id="notice"><%= notice %></p>
 <div class="col-md-10 col-md-offset-1">
-    <table id="incident-list" class="table dt-responsive" >
-      <thead>
-        <tr>
-          <th>Priority</th>
-          <th>Subject</th>
-          <th>Location of Incident</th>
-          <th>Time Submitted </th>
-          <th>Time of Incident</th>
-          <th>Category</th>
-          <th>Actions</th>
-          <th>Progress</th>
-        </tr>
-      </thead>
+  <table id="incident-list" class="table dt-responsive" >
+    <thead>
+      <tr>
+        <th>Priority</th>
+        <th>Subject</th>
+        <th>Location of Incident</th>
+        <th>Time Submitted </th>
+        <th>Time of Incident</th>
+        <th>Category</th>
+        <th>Actions</th>
+        <th>Progress</th>
+      </tr>
+    </thead>
 
-      <tbody>
-        <% @incidents.each do |incident| %>
-          <tr>
-            <td class="text-center"><%= incident.getPriority(incident.priority) %></td>
-            <td><%= incident.subject %></td>
-            <td><%= incident.location_of_incident %></td>
-            <td><%= local_time_ago(incident.created_at) %></td>
-            <td><%= local_time_ago(incident.time_of_incident) %></td>
-            <td><%= incident.incident_category.name %></td>
-            <td> <%= link_to 'Edit', edit_incident_path(incident), :class => 'btn btn-default' %>
-                <%= link_to 'Show', incident, :class => 'btn btn-default' %>
-            </td>
-            <td><%= incident.getProgress(incident.progress) %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <tbody>
+      <% @incidents.each do |incident| %>
+        <tr>
+          <td class="text-center"><%= incident.getPriority(incident.priority) %></td>
+          <td><%= incident.subject %></td>
+          <td><%= incident.location_of_incident %></td>
+          <td><%= local_time_ago(incident.created_at) %></td>
+          <td><%= local_time_ago(incident.time_of_incident) %></td>
+          <td><%= incident.incident_category.name %></td>
+          <td> <%= link_to 'Edit', edit_incident_path(incident), :class => 'btn btn-default' %>
+          <%= link_to 'Show', incident, :class => 'btn btn-default' %>
+          </td>
+          <td><%= incident.getProgress(incident.progress) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 <br>
