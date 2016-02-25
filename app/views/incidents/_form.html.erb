@@ -21,7 +21,7 @@
 
 <div class="col-md-10 col-md-offset-1">
   <div class="field form-group col-md-7">
-    <%= f.label :subject, :class => 'required' %><br>
+    <%= f.label :subject, :class => 'required' %>
     <%= f.text_field :subject, :class => "form-control"%>
   </div>
 
@@ -33,13 +33,13 @@
   </div>
 
   <div class="field form-group col-md-7" >
-    <%= f.label :additional_details, "Additional Details" %><br>
+    <%= f.label :additional_details, "Additional Details" %>
     <%= f.text_area :additional_details, :class => "form-control", :rows => "10"%>
   </div>
 
   <div class="field form-group col-md-5">
     <%= f.label :location_of_incident, "Location of Incident",
-        :class => 'required' %><br>
+        :class => 'required' %>
     <%= f.text_field :location_of_incident, :class => "form-control"%>
   </div>
 
@@ -50,7 +50,7 @@
 
   <div class="field form-group col-md-5">
       <%= f.label :incident_category_id, 'Intended Department',
-        :class => 'required' %><br>
+        :class => 'required' %>
     <%= collection_select(:incident, :incident_category_id, IncidentCategory.all,
                           :id, :name, {:prompt => false},
                           {:class => "selectpicker",
