@@ -4,5 +4,4 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # REMOVE THIS BEFORE PRODUCTION. THIS IS FOR STRESS TESTINGS
   skip_before_filter :verify_authenticity_token, :if =>lambda{ params[:authenticity_token].present? && params[:authenticity_token] == 'thisisahack' }
-
 end
