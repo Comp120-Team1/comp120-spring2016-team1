@@ -29,7 +29,8 @@ gem 'sdoc', '~> 0.4', group: :doc
 # for working with s3
 gem 'aws-sdk', '~> 2.2'
 
-# for formatting tables easily
+# Datatable plugin for creating responsive tables with front end backend tools
+# for development
 gem 'jquery-datatables-rails', '~> 3.3'
 
 # use fancy datepicker
