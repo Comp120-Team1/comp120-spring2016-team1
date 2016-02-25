@@ -13,8 +13,6 @@ gem 'bootstrap-sass', '~> 3.3'
 gem 'uglifier', '~> 2.7'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1'
-# for better time stamps (in words)
-gem 'local_time', "~> 1.0"
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -28,17 +26,19 @@ gem 'jquery-turbolinks', "~> 2.1"
 gem 'jbuilder', '~> 2.4'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4', group: :doc
-
-gem 'jquery-datatables-rails', '~> 3.3'
+# for working with s3
 gem 'aws-sdk', '~> 2.2'
 
-# use fancy datepicker
-gem 'momentjs-rails', '~> 2.11'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17'
+# for formatting tables easily
+gem 'jquery-datatables-rails', '~> 3.3'
 
+# use fancy datepicker
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17'
+gem 'momentjs-rails', '~> 2.11'
+# for better time stamps (in words)
+gem 'local_time', "~> 1.0"
 # for bootstrap switch buttons
 gem "bootstrap-switch-rails", "~> 3.3"
-
 # for bootstrap-select
 gem 'bootstrap-select-rails', "~> 1.6"
 
