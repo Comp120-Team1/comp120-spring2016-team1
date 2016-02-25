@@ -2,18 +2,21 @@
   init_form()
 <% end %>
 
-<%= form_for(@incident) do |f| %>
-  <% if @incident.errors.any? %>
-    <div id="error_explanation">
-      <h4 class='text-danger'><%= pluralize(@incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
 
-      <ul>
-      <% @incident.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if @incident.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <h4><%= pluralize(@incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
+    <ul>
+    <% @incident.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h1>New Incident</h1>
+
+<%= form_for(@incident) do |f| %>
 
 <div class="col-md-10 col-md-offset-1">
   <div class="field form-group col-md-7">
