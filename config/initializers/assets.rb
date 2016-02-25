@@ -13,3 +13,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( incidents.css )
 Rails.application.config.assets.precompile += %w( table.css )
 Rails.application.config.assets.precompile += %w( priority.css )
+Rails.application.config.assets.precompile += %w( form.css )

@@ -1,0 +1,5 @@
+/* add required field asterisk */
+.required:after {
+  content: " *";
+  color: #cc0000;
+}
