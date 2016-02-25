@@ -18,15 +18,25 @@ function highlight_priorities() {
       //       //$(this).css({ background: "#FC6" });
       //    //  $(this).show(); // show matching row
       // });
+      //
+      var HIGH = "!!!"
+      var MED  = "!!"
+      var LOW  = "!"
 
       $('td:first-child').each(function() {
         priority = $(this).text();
-        if (priority == "!!!") {
-          $(this).addClass("danger");
-        } else if (priority == "!!") {
-          $(this).css("background-color", "#fff5e6");
-        } else if (priority == "!") {
-          $(this).addClass("warning");
+        $(this).text("")
+        if (priority == HIGH) {
+          $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_high" aria-hidden="true"></span>')
+          $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_high" aria-hidden="true"></span>')
+          $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_high" aria-hidden="true"></span>')
+        } else if (priority == MED) {
+          // $(this).css("background-color", "#fff5e6");
+          $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_med" aria-hidden="true"></span>')
+          $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_med" aria-hidden="true"></span>')
+        } else if (priority == LOW) {
+          // $(this).addClass("warning");
+          $(this).html('<span class="glyphicon glyphicon-exclamation-sign priority_low" aria-hidden="true"></span>')
         }
       });
   });

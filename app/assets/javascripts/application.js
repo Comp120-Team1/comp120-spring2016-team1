@@ -18,7 +18,7 @@
 //= require dataTables/extras/dataTables.responsive
 //= require dataTables/jquery.dataTables
 //= require bootstrap-sprockets
-//= require turbolinks
+//require turblolinks
 //= require_tree
 //= require local_time
 //= require moment

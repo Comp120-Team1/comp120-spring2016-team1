@@ -14,11 +14,11 @@ class Incident < ActiveRecord::Base
       if !priority.is_a? Numeric
         "Unknown"
       elsif priority <= 1
-        "!"
+        "Low"
       elsif priority == 2
-        "!!"
+        "Medium"
       elsif priority >= 3
-        "!!!"
+        "High"
       end
     end
 
