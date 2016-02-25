@@ -9,13 +9,16 @@ function highlight_priorities(callback) {
         priority = $(this).text();
         $(this).text("")
         if (priority == HIGH) {
+          $(this).append("<div style='display: none;'>3</div>") // for sorting
           $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_high" aria-hidden="true"></span>')
           $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_high" aria-hidden="true"></span>')
           $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_high" aria-hidden="true"></span>')
         } else if (priority == MED) {
+          $(this).append("<div style='display: none;'>2</div>") // for sorting
           $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_med" aria-hidden="true"></span>')
           $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_med" aria-hidden="true"></span>')
         } else if (priority == LOW) {
+          $(this).append("<div style='display: none;'>1</div>") // for sorting
           $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_low" aria-hidden="true"></span>')
         }
     });
