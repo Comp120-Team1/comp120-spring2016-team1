@@ -2,6 +2,10 @@
   highlight_priorities(init_table)
 <% end %>
 
+
+<%=  react_component('Button', {}, {prerender: true})%>
+<%= react_component('Incidentlist', {incidents: @incidents}, {prerender:true})%>
+<div> b</div>
 <p id="notice"><%= notice %></p>
 <div class="col-md-10 col-md-offset-1">
     <table id="incident-list" class="table dt-responsive" >

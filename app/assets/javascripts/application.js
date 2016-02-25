@@ -20,6 +20,9 @@
 //= require bootstrap-sprockets
 //=require jquery-fileupload/basic
 //require turblolinks
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree
 //= require local_time
 //= require moment

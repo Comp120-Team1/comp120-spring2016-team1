@@ -47,6 +47,9 @@ gem 'heroku-deflater', :group => :production
 
 gem 'font_assets'
 
+# React
+gem 'react-rails', '~> 1.6.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
