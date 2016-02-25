@@ -1,14 +1,28 @@
 <script type="text/javascript">
 <<<<<<< HEAD
+<<<<<<< HEAD
 $(document).ready( function() {
-  var table = $('#incident-list').DataTable({
-    "dom": 'l<"filtering"f>t<"pagination"p>',
-    responsive: true,
-    "order": [[0, "desc"], [ 3, "desc" ]],
-    "oLanguage": { "sSearch": "Filter: " }
-  });
-  highlight_priorities()
+  highlight_priorities(function () {
+    var table = $('#incident-list').DataTable({
+      "dom": 'l<"filtering"f>t<"pagination"p>',
+      responsive: true,
+      "order": [[0, "desc"], [ 3, "desc" ]],
+      "oLanguage": { "sSearch": "Filter: " }
+    });
+  })
 });
+=======
+  $(document).ready( function() {
+    highlight_priorities(function() {
+      var table = $('#incident-list').DataTable({
+         "dom": 'l<"filtering"f>t<"pagination"p>',
+          responsive: true,
+          "order": [[0, "desc"], [ 3, "desc" ]],
+          "oLanguage": { "sSearch": "Filter: " }
+      });
+    })
+  });
+>>>>>>> parent of 2890689... callback to slow so table loading in full view, undid the callback
 =======
   $(document).ready( function() {
     highlight_priorities(function() {

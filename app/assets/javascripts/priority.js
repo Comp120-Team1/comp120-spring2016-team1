@@ -19,8 +19,8 @@ function highlight_priorities(callback) {
           $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_low" aria-hidden="true"></span>')
         }
     });
-
-    callback()
+    if (callback)
+      callback()
 }
 
 function priority_to_text(priority)
