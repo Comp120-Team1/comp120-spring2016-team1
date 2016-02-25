@@ -25,7 +25,6 @@ class IncidentsController < ApplicationController
   # POST /incidents.json
   def create
     @incident = Incident.new(incident_params)
-    puts incident_params
     respond_to do |format|
       if @incident.save
         format.html { redirect_to @incident, notice: 'Incident was successfully created.' }
@@ -42,7 +41,6 @@ class IncidentsController < ApplicationController
   def update
     respond_to do |format|
       if @incident.update(incident_params)
-        puts incident_params
         format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
         format.json { render :show, status: :ok, location: @incident }
       else
