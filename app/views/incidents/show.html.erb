@@ -1,3 +1,9 @@
+<script>
+  $( document ).ready(function() {
+    $(".priority").text(priority_to_text($(".priority").text()))
+  })
+</script>
+
 <div class = "col-md-6 col-md-offset-3">
   <div class="panel panel-primary">
     <div class = "panel-heading">
@@ -7,11 +13,13 @@
     </div>
 
     <div class="panel-body">
-      <p id="notice"><%= notice %></p>
+      <p id="notice" class="text-success"><%= notice %></p>
 
       <p>
-        <strong>Priority:</strong>
+      <strong>Priority:</strong>
+      <span class="priority">
         <%= @incident.getPriority(@incident.priority) %>
+      </span>
       </p>
 
       <p>
@@ -41,14 +49,18 @@
       </p>
 
       <p>
-        <strong>Public:</strong>
-        <%= @incident.public %>
+        <strong>Visibility:</strong>
+        <% if @incident.public %>
+          Public
+        <% else %>
+          Private
+        <% end %>
       </p>
 
       <div class="btn-group col-md-offset-5" role="group" aria-label="...">
         <button type="button" class="btn btn-default btn-md">
           <%= link_to 'Edit', edit_incident_path(@incident) %>
-        </button>        
+        </button>
         <button type="button" class="btn btn-default btn-md">
           <%= link_to 'View All', incidents_path(@incident) %>
         </button>

@@ -8,17 +8,18 @@ class Incident < ActiveRecord::Base
     validates :location_of_incident, presence: true
     validates :time_of_incident, presence: true
     validates :progress, presence: true
-    validates :public, presence: true
     validates :incident_category, presence: true
     def getPriority priority
       if !priority.is_a? Numeric
-        "Unknown"
-      elsif priority <= 1
-        "Low"
-      elsif priority == 2
-        "Medium"
-      elsif priority >= 3
-        "High"
+        0
+      else
+        priority
+      # elsif priority <= 1
+      #   "Low"
+      # elsif priority == 2
+      #   "Medium"
+      # elsif priority >= 3
+      #   "High"
       end
     end
 
