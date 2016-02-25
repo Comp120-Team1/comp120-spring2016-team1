@@ -20,8 +20,7 @@ function highlight_priorities(callback) {
         }
     });
 
-    if (callback)
-      callback()
+    callback()
 }
 
 function priority_to_text(priority)
