@@ -1,5 +1,4 @@
-function highlight_priorities() {
-  $(document).ready( function() {
+function highlight_priorities(callback) {
     grid = $("table")
 
       var HIGH = 3
@@ -19,8 +18,9 @@ function highlight_priorities() {
         } else if (priority == LOW) {
           $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_low" aria-hidden="true"></span>')
         }
-      });
-  });
+    });
+
+    callback()
 }
 
 function priority_to_text(priority)
