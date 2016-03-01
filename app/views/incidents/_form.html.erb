@@ -1,6 +1,7 @@
 <% content_for :js do %>
   init_form()
 <% end %>
+<%= javascript_include_tag 'fileupload' %>
 
 <%= stylesheet_link_tag "form" %>
 
@@ -15,7 +16,7 @@
   </div>
 <% end %>
 
-<%= form_for(@incident) do |f| %>
+<%= form_for(@incident, html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
 
 <div class="col-md-10 col-md-offset-1">
   <div class="field form-group col-md-7">
@@ -62,6 +63,11 @@
                 %>
 
     <% end %>
+  </div>
+
+  <div class="field form-group col-md-8">
+  <%= f.label :picture_url %><br>
+  <%= f.file_field :picture_url %>
   </div>
 
   <div class="actions col-md-10">

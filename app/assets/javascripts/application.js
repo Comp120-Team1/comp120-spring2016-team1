@@ -18,6 +18,7 @@
 //= require dataTables/extras/dataTables.responsive
 //= require dataTables/jquery.dataTables
 //= require bootstrap-sprockets
+//=require jquery-fileupload/basic
 //require turblolinks
 //= require_tree
 //= require local_time

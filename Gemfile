@@ -32,7 +32,7 @@ gem 'aws-sdk', '~> 2.2'
 # Datatable plugin for creating responsive tables with front end backend tools
 # for development
 gem 'jquery-datatables-rails', '~> 3.3'
-
+gem 'jquery-fileupload-rails', '~> 0.4.6'
 # use fancy datepicker
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17'
 gem 'momentjs-rails', '~> 2.11'

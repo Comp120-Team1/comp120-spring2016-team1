@@ -1,6 +1,7 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "jquery.fileupload-ui";
 @import 'bootstrap-datetimepicker';
 @import "bootstrap3-switch";
 @import 'bootstrap-select';
