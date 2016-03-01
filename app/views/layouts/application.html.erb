@@ -31,9 +31,11 @@
     </div>
 
     <script>
-      <% if content_for? :js %>
-        <%= yield :js %>
-      <% end %>
+      $(document).ready(function() {
+        <% if content_for? :js %>
+          <%= yield :js %>
+        <% end %>
+      });
     </script>
 </body>
 </html>

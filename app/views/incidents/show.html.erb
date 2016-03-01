@@ -1,8 +1,6 @@
-<script>
-  $( document ).ready(function() {
+<% content_for :js do %>
     $(".priority").text(priority_to_text($(".priority").text()))
-  })
-</script>
+<% end %>
 
 <div class = "col-md-6 col-md-offset-3">
   <div class="panel panel-primary">

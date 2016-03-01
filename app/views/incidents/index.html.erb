@@ -1,15 +1,6 @@
-<script type="text/javascript">
-  $(document).ready( function() {
-    highlight_priorities(function() {
-      var table = $('#incident-list').DataTable({
-         "dom": 'l<"filtering"f>t<"pagination"p>',
-          responsive: true,
-          "order": [[0, "desc"], [ 3, "desc" ]],
-          "oLanguage": { "sSearch": "Filter: " }
-      });
-    })
-  });
-</script>
+<% content_for :js do %>
+  highlight_priorities(init_table)
+<% end %>
 <%= stylesheet_link_tag "incidents" %>
 <%= stylesheet_link_tag "priority" %>
 <%= stylesheet_link_tag "table" %>
