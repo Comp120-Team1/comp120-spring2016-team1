@@ -64,6 +64,7 @@ class IncidentsController < ApplicationController
 
   private
     def set_s3_direct_post
+      puts 'hello'
       @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
     end
     # Use callbacks to share common setup or constraints between actions.

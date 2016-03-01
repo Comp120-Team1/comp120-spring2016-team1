@@ -1,3 +1,4 @@
+//using heroku example found: https://devcenter.heroku.com/articles/direct-to-s3-image-uploads-in-rails
 $(function() {
   $('.directUpload').find("input:file").each(function(i, elem) {
     var fileInput    = $(elem);
