@@ -12,7 +12,7 @@ class Incidentlist extends React.Component {
         const incidents = (state=initialState, action) => {
             switch(action.type) {
                 case 'TOGGLE__INCIDENT': 
-                    state.incidents.[action.id].expanded = action.expand;
+                    state.incidents[action.id].expanded = action.expand;
                 default:
             }
             return state;
@@ -26,7 +26,7 @@ class Incidentlist extends React.Component {
                 }
             }
 
-            return : {
+            return {
                 incidents: incidents
             }
         }
