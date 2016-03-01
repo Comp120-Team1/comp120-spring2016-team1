@@ -9,6 +9,7 @@ class Incident extends React.Component {
             "medium-priority": (this.props.incident.priority === 2),
             "low-priority": (this.props.incident.priority === 1)
         });
+        let created_at = new Date(this.props.incident.created_at);
         return (
             <li className={liClasses}>
                 
@@ -20,7 +21,7 @@ class Incident extends React.Component {
                         {this.props.incident.subject}
                     </div>
                     <div className="submitted-at">
-                        {this.props.incident.created_at}
+                        {created_at.toDateString()}
                     </div>
                 </div>
             </li>
