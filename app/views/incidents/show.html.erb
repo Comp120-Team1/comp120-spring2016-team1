@@ -1,52 +1,70 @@
+<script>
+  $( document ).ready(function() {
+    $(".priority").text(priority_to_text($(".priority").text()))
+  })
+</script>
 
-<div class="container col-md-6 col-md-offset-5">
-<p id="notice"><%= notice %></p>
+<div class = "col-md-6 col-md-offset-3">
+  <div class="panel panel-primary">
+    <div class = "panel-heading">
+        <strong>
+        <%= @incident.subject %>
+        </strong>
+    </div>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @incident.subject %>
-</p>
+    <div class="panel-body">
+      <p id="notice" class="text-success"><%= notice %></p>
 
-<p>
-  <strong>Priority:</strong>
-  <%= @incident.priority %>
-</p>
+      <p>
+      <strong>Priority:</strong>
+      <span class="priority">
+        <%= @incident.getPriority(@incident.priority) %>
+      </span>
+      </p>
 
-<p>
-  <strong>Department:</strong>
-  <%= @incident.dept_id %>
-</p>
-
-
-<p>
-  <strong>Location of incident:</strong>
-  <%= @incident.location_of_incident %>
-</p>
-
-<p>
-  <strong>Time of incident:</strong>
-  <%= @incident.time_of_incident %>
-</p>
-
-<p>
-  <strong>Additional details:</strong>
-  <%= @incident.additional_details %>
-</p>
-
-<p>
-  <strong>Progress:</strong>
-  <%= @incident.progress %>
-</p>
-
-<p>
-  <strong>Public:</strong>
-  <%= @incident.public %>
-</p>
+      <p>
+        <strong>Category:</strong>
+        <%= @incident.incident_category.name %>
+      </p>
 
 
-<div class="container">
-	<button type="button" class="btn btn-default btn-md">
-		<%= link_to 'Edit', edit_incident_path(@incident) %>
-	</button>
-</div>
+      <p>
+        <strong>Location of Incident:</strong>
+        <%= @incident.location_of_incident %>
+      </p>
+
+      <p>
+        <strong>Time of Incident:</strong>
+        <%= @incident.time_of_incident %>
+      </p>
+
+      <p>
+        <strong>Additional Details:</strong>
+        <%= @incident.additional_details %>
+      </p>
+
+      <p>
+        <strong>Progress:</strong>
+        <%= @incident.getProgress(@incident.progress) %>
+      </p>
+
+      <p>
+        <strong>Visibility:</strong>
+        <% if @incident.public %>
+          Public
+        <% else %>
+          Private
+        <% end %>
+      </p>
+
+      <div class="btn-group col-md-offset-5" role="group" aria-label="...">
+        <button type="button" class="btn btn-default btn-md">
+          <%= link_to 'Edit', edit_incident_path(@incident) %>
+        </button>
+        <button type="button" class="btn btn-default btn-md">
+          <%= link_to 'View All', incidents_path(@incident) %>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

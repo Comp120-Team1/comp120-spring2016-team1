@@ -1,18 +1,38 @@
-function highlight_priorities() {
-	grid = $("table")
+function highlight_priorities(callback) {
+    grid = $("table")
 
-	grid.find('tr').each(function (i) {
-	   //$(this).css({ background: "#FFF" });//  <= this line
-	   // check to see if search term matches Name column
-		priority = $('td:first', $(this)).text();
-		if (priority >= 8) {
-			$(this).addClass("danger")
-		} else if (priority >= 5) {
-			$(this).addClass("warning")
-		}
-	   //if ($(this).find('td:first-child').text().toUpperCase().match(text.toUpperCase()))
-			   //$(this).css({ background: "#FC6" });
-			//  $(this).show(); // show matching row
-	});
+      var HIGH = 3
+      var MED  = 2
+      var LOW  = 1
+
+      $('td:first-child').each(function() {
+        priority = $(this).text();
+        $(this).text("")
+        if (priority == HIGH) {
+          $(this).append("<div style='display: none;'>3</div>") // for sorting
+          $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_high" aria-hidden="true"></span>')
+          $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_high" aria-hidden="true"></span>')
+          $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_high" aria-hidden="true"></span>')
+        } else if (priority == MED) {
+          $(this).append("<div style='display: none;'>2</div>") // for sorting
+          $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_med" aria-hidden="true"></span>')
+          $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_med" aria-hidden="true"></span>')
+        } else if (priority == LOW) {
+          $(this).append("<div style='display: none;'>1</div>") // for sorting
+          $(this).append('<span class="glyphicon glyphicon-exclamation-sign priority_low" aria-hidden="true"></span>')
+        }
+    });
+    if (callback)
+      callback()
 }
 
+function priority_to_text(priority)
+{
+  if (priority == 3)
+    return "High"
+  else if (priority == 2)
+    return "Medium"
+  else if (priority == 1)
+    return "Low"
+  else return 0
+}

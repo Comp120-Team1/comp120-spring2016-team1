@@ -26,7 +26,6 @@ class IncidentsController < ApplicationController
   # POST /incidents.json
   def create
     @incident = Incident.new(incident_params)
-
     respond_to do |format|
       if @incident.save
         format.html { redirect_to @incident, notice: 'Incident was successfully created.' }
@@ -64,7 +63,6 @@ class IncidentsController < ApplicationController
 
   private
     def set_s3_direct_post
-      puts 'hello'
       @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
     end
     # Use callbacks to share common setup or constraints between actions.
@@ -74,6 +72,6 @@ class IncidentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def incident_params
-      params.require(:incident).permit(:priority, :dept_id, :person_id, :subject, :location_of_incident, :time_of_incident, :additional_details, :progress, :public, :picture_url, :video_url)
+      params.require(:incident).permit(:priority, :dept_id, :person_id, :subject, :location_of_incident, :time_of_incident, :additional_details, :progress, :public, :picture_url, :video_url, :incident_category_id)
     end
 end

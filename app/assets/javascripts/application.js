@@ -18,7 +18,11 @@
 //= require dataTables/extras/dataTables.responsive
 //= require dataTables/jquery.dataTables
 //= require bootstrap-sprockets
-//= require turbolinks
+//=require jquery-fileupload/basic
+//require turblolinks
 //= require_tree
 //= require local_time
-//=require jquery-fileupload/basic
+//= require moment
+//= require bootstrap-datetimepicker
+//= require bootstrap-switch
+//= require bootstrap-select
