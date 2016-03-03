@@ -3,8 +3,6 @@
 <% end %>
 <%= javascript_include_tag 'fileupload' %>
 
-<%= stylesheet_link_tag "form" %>
-
 <% if @incident.errors.any? %>
   <div id="error_explanation" class="alert alert-danger">
     <h4><%= pluralize(@incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
