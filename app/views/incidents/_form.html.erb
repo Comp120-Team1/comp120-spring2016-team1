@@ -1,7 +1,7 @@
 <% content_for :js do %>
   init_form()
+  <%= javascript_include_tag 'fileupload' %>
 <% end %>
-<%= javascript_include_tag 'fileupload' %>
 
 <% if @incident.errors.any? %>
   <div id="error_explanation" class="alert alert-danger">
