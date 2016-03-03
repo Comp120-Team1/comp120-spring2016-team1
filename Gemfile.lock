@@ -67,6 +67,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
+    font_assets (0.1.12)
+      rack
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     heroku-deflater (0.6.2)
@@ -183,6 +185,7 @@ DEPENDENCIES
   bootstrap3-datetimepicker-rails (~> 4.17)
   byebug (~> 8.2)
   coffee-rails (~> 4.1)
+  font_assets
   heroku-deflater
   jbuilder (~> 2.4)
   jquery-datatables-rails (~> 3.3)

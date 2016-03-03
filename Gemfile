@@ -45,6 +45,8 @@ gem 'bootstrap-select-rails', "~> 1.6"
 
 gem 'heroku-deflater', :group => :production
 
+gem 'font_assets'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
