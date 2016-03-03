@@ -10,9 +10,11 @@ class Incident extends React.Component {
             "low-priority": (this.props.incident.priority === 1)
         });
         let created_at = new Date(this.props.incident.created_at);
+        let onIncidentClick = this.props.onIncidentClick;
+        let id = this.props.incident.id;
         return (
-            <li className={liClasses}>
-                
+            <li className={liClasses} onClick={() => {console.log("clicked"); onIncidentClick(id)}}>
+                {this.props.expanded} 
                 <div className="incident-heading"> 
                     <div className={iconClasses}>
                         <span className="glyphicon glyphicon-exclamation-sign"></span>

@@ -3,7 +3,7 @@
     window.__incidents = <%= raw(@incidents.to_json) %> ;
 <% end %>
 
-<%= react_component('Incidentlist', {incidents: @incidents}, {prerender:true})%>
+<%= react_component('App', {incidents: @incidents}, {prerender:true})%>
 
 
 <p id="notice"><%= notice %></p>

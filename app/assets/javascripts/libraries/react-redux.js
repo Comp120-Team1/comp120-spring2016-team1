@@ -794,4 +794,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ }
 /******/ ])
 });
-;
+
+
+
+var Provider = ReactRedux.Provider;

@@ -22,6 +22,7 @@
 //require turblolinks
 //= require react
 //= require react_ujs
+//= require_tree ./libraries
 //= require components
 //= require_tree
 //= require local_time
