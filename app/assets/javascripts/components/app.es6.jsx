@@ -1,3 +1,4 @@
+var AppStore = {};
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -13,9 +14,10 @@ class App extends React.Component {
         }
         reducer = (state={}, action) => {
             switch(action.type) {
-                case 'TOGGLE_INCIDENT': 
-                    state.incidents[action.id].expanded = !state.incidents[action.id].expanded;
-                default:
+                case 'TOGGLE_INCIDENT':
+                    let newState = Object.assign({}, state);
+                    newState.incidents[action.id].expanded = !newState.incidents[action.id].expanded;
+                    return newState;
             }
             return state;
         }
@@ -25,6 +27,7 @@ class App extends React.Component {
 
         this.state.store = Redux.createStore(reducer, initialStore);
         
+        AppStore = this.state.store;
     }
 
     render() {

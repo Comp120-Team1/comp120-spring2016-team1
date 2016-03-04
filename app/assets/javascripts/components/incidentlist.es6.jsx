@@ -9,7 +9,7 @@ class Incident_list extends React.Component {
                     {this.props.incidents.map(function(result){
                         return(<Incident incident={result} 
                                         key={result.id}
-                                        onIncidentClick={onIncidentClick}></Incident>)})}
+                                        onIncidentClick={onIncidentClick}/>)})}
                 </ul>
             </div>
         );
@@ -26,9 +26,6 @@ const Incidentlist = function() {
               incidents.push(state.incidents[key]);
             }
         }
-
-        console.log("state");
-        console.log(state);
 
         return {
             incidents: incidents

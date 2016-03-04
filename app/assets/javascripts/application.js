@@ -22,9 +22,8 @@
 //require turblolinks
 //= require react
 //= require react_ujs
-//= require_tree ./libraries
 //= require components
-//= require_tree
+//= require_tree ./misc
 //= require local_time
 //= require moment
 //= require bootstrap-datetimepicker
