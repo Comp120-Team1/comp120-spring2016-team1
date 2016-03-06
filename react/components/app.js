@@ -2,6 +2,7 @@ import {Component} from 'react';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import Incidentlist from './incidentlist';
+import Reducers from './reducers';
 
 class App extends Component {
     constructor(props) {
@@ -16,20 +17,10 @@ class App extends Component {
             initialStore.incidents[incident.id] = incident;
             initialStore.incidents[incident.id].expanded = false;
         }
-        let reducer = (state={}, action) => {
-            switch(action.type) {
-                case 'TOGGLE_INCIDENT':
-                    let newState = Object.assign({}, state);
-                    newState.incidents[action.id].expanded = !newState.incidents[action.id].expanded;
-                    return newState;
-            }
-            return state;
-        }
-
         
         this.state = {};
 
-        this.state.store = createStore(reducer, initialStore);
+        this.state.store = createStore(Reducers, initialStore);
     }
 
     render() {

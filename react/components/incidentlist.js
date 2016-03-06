@@ -4,8 +4,6 @@ import Incident from './incident';
 
 
 class Incidentlist extends Component {
-    
-
     render() {
         let onIncidentClick = this.props.onIncidentClick;
         return(
@@ -19,7 +17,6 @@ class Incidentlist extends Component {
             </div>
         );
     } 
-
 }
 
 const mapStateToProps = (state) => {
