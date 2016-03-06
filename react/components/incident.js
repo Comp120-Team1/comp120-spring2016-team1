@@ -1,4 +1,8 @@
-class Incident extends React.Component {
+import classNames from 'classnames';
+import {Component} from 'react';
+
+
+class Incident extends Component {
     render () {
         let liClasses = classNames({
             "incident":true
@@ -52,3 +56,5 @@ class Incident extends React.Component {
         }
     }
 }
+
+export default Incident;

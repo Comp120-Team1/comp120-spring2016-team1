@@ -20,12 +20,12 @@
 //= require bootstrap-sprockets
 //=require jquery-fileupload/basic
 //require turblolinks
-//= require react
-//= require react_ujs
-//= require components
-//= require_tree ./misc
 //= require local_time
 //= require moment
 //= require bootstrap-datetimepicker
 //= require bootstrap-switch
 //= require bootstrap-select
+//= require react
+//= require react_ujs
+//= require ./bundle.js
+//= require_tree ./misc

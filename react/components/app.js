@@ -1,5 +1,9 @@
-var AppStore = {};
-class App extends React.Component {
+import {Component} from 'react';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import Incidentlist from './incidentlist';
+
+class App extends Component {
     constructor(props) {
         super(props);
         
@@ -12,7 +16,7 @@ class App extends React.Component {
             initialStore.incidents[incident.id] = incident;
             initialStore.incidents[incident.id].expanded = false;
         }
-        reducer = (state={}, action) => {
+        let reducer = (state={}, action) => {
             switch(action.type) {
                 case 'TOGGLE_INCIDENT':
                     let newState = Object.assign({}, state);
@@ -25,9 +29,7 @@ class App extends React.Component {
         
         this.state = {};
 
-        this.state.store = Redux.createStore(reducer, initialStore);
-        
-        AppStore = this.state.store;
+        this.state.store = createStore(reducer, initialStore);
     }
 
     render() {
@@ -36,3 +38,5 @@ class App extends React.Component {
         </Provider>);
     }
 }
+
+export default App;
