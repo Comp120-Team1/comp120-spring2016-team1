@@ -9,7 +9,10 @@ class App extends Component {
         super(props);
         
         let initialStore = {
-            incidents: {}
+            incidents: {},
+            filters: {
+                orderedBy: "priority"
+            }
         };
 
         for (var i = 0; i < props.incidents.length; i++) {

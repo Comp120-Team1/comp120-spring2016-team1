@@ -1,13 +1,14 @@
 import {Component} from 'react';
 import {connect} from 'react-redux';
 import Incident from './incident';
-
+import Filters from './filters';
 
 class Incidentlist extends Component {
     render() {
         let onIncidentClick = this.props.onIncidentClick;
         return(
             <div className="col-md-10 col-md-offset-1">
+               <Filters /> 
                 <ul className="incident-list" id="incidents">
                     {this.props.incidents.map(function(result){
                         return(<Incident incident={result} 
@@ -27,7 +28,9 @@ const mapStateToProps = (state) => {
           incidents.push(state.incidents[key]);
         }
     }
-
+   incidents.sort((a, b) => {
+        return a[state.filters.orderedBy] < b[state.filters.orderedBy]
+   }); 
     return {
         incidents: incidents
     }
