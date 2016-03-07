@@ -27,6 +27,10 @@ We used YSlow in order to view which areas could be optimized for performance.
 
 Overall, our loading times and file sizes reduced dramatically and our capacity increased. This is demonstrated in a YSlow rating improvement from 85 to 99.
 
+Unfortuntaely, we could not stress test again because we do not want to get charged for overloading the server with too many requests.
+
+Our page loading time reduced from ~250ms to 51ms, as measured by Google Chrome Auditing in Developer Tools. This is a decrease of 80%.
+
 #### Photo Evidence:
 
 ![YSlow Before]
