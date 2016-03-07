@@ -7,7 +7,7 @@ class Incidentlist extends Component {
     render() {
         let onIncidentClick = this.props.onIncidentClick;
         return(
-            <div className="col-md-10 col-md-offset-1">
+            <div className="col-md-10 col-xs-12 col-md-offset-1">
                <Filters /> 
                 <ul className="incident-list" id="incidents">
                     {this.props.incidents.map(function(result){
