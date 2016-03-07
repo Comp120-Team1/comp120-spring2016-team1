@@ -29,7 +29,12 @@ const mapStateToProps = (state) => {
         }
     }
    incidents.sort((a, b) => {
-        return a[state.filters.orderedBy] < b[state.filters.orderedBy]
+        let less = a[state.filters.orderedBy] < b[state.filters.orderedBy];
+        if (state.filters.reverse) {
+            return !less;
+        } else {
+            return less;
+        }
    }); 
     return {
         incidents: incidents
