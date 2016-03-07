@@ -25,7 +25,6 @@
 //= require bootstrap-datetimepicker
 //= require bootstrap-switch
 //= require bootstrap-select
-//= require react
-//= require react_ujs
 //= require ./bundle.js
 //= require_tree ./misc
+//= require react_ujs
