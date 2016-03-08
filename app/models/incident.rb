@@ -1,6 +1,12 @@
 class Incident < ActiveRecord::Base
     belongs_to :incident_category
     belongs_to :user
+    before_validation :default_values
+
+    def default_values
+      incident_categories = IncidentCategory.all
+      self.incident_category_id ||= incident_categories.where(:name => 'Unknown').pluck(:id)
+    end
 
     validates :priority, presence: true
     validates :subject, presence: true
@@ -8,7 +14,7 @@ class Incident < ActiveRecord::Base
     validates :time_of_incident, presence: true
     validates :progress, presence: true
     validates :incident_category, presence: true
-    
+
     def getPriority priority
       if !priority.is_a? Numeric
         0

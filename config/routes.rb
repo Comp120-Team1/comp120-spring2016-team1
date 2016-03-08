@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   get '/', to:'incidents#index'
+  get '/api' => redirect('/swagger/dist/index.html?url=/apidocs/api-docs.json')
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
