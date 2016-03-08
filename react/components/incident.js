@@ -27,7 +27,8 @@ const IncidentHeader = (props) => {
 class Incident extends Component {
     render () {
         let liClasses = classNames({
-            "incident":true
+            "incident":true,
+            "clickable": true
         });
         let onIncidentClick = this.props.onIncidentClick;
         let id = this.props.incident.id;
