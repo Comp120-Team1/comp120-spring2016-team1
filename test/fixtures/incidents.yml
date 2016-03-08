@@ -3,7 +3,7 @@
 one:
   priority: 1
   incident_category: fire
-  person_id: 1
+  user_id: 1
   subject: MyStringOne
   location_of_incident: MyString
   time_of_incident: 2016-02-07 12:09:57
@@ -17,7 +17,7 @@ one:
 two:
   priority: 1
   incident_category: water
-  person_id: 1
+  user_id: 1
   subject: MyString
   location_of_incident: MyString
   time_of_incident: 2016-02-07 12:09:57

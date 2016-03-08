@@ -1,11 +1,14 @@
 class Incident < ActiveRecord::Base
     belongs_to :incident_category
+    belongs_to :user
+
     validates :priority, presence: true
     validates :subject, presence: true
     validates :location_of_incident, presence: true
     validates :time_of_incident, presence: true
     validates :progress, presence: true
     validates :incident_category, presence: true
+    
     def getPriority priority
       if !priority.is_a? Numeric
         0
