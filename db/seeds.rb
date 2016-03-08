@@ -12,3 +12,6 @@ open("db/incident_categories.txt") do |categories|
   end
 end
 Incident.delete_all
+
+
+User.create(:first_name => "Derek", :last_name => "Benson")
