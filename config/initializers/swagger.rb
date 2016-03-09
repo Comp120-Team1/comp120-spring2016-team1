@@ -13,3 +13,9 @@ Swagger::Docs::Config.register_apis({
     clean_directory: true
   }
 })
+
+GrapeSwaggerRails.options.before_filter_proc = proc {
+  GrapeSwaggerRails.options.app_url = request.protocol + request.host_with_port
+}
+GrapeSwaggerRails.options.url      = '/apidocs/api-docs.json'
+GrapeSwaggerRails.options.app_name = 'Incident Reporter'
