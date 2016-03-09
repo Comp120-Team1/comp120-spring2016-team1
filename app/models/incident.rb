@@ -4,8 +4,8 @@ class Incident < ActiveRecord::Base
     before_validation :default_values
 
     def default_values
-      incident_categories = IncidentCategory.all
-      self.incident_category_id ||= incident_categories.where(:name => 'Unknown').pluck(:id)
+      #default to Unknown category
+      self.incident_category = IncidentCategory.first
     end
 
     validates :priority, presence: true
