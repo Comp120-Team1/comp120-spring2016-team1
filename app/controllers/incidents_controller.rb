@@ -25,13 +25,16 @@ class IncidentsController < ApplicationController
     param :body, :tag, :incidentExample, :required, "Subject of Incident"
   end
 
-  swagger_model :incidentExample do 
+  swagger_model :incidentExample do
     description "An incident example"
-    property :subject, :string, :required, "Fire"
-    property :location_of_incident, :string, :required, "Building 1, Room 207"
-    property :priority, :integer, :required, 1
-    property :time_of_incident, "2016-02-23T23:25:00.000Z", :required, :string
-    property :progress, :integer, :required, 0
+    property :subject, :string, :required, "Incident subject", default_value:
+             "Fire"
+    property :location_of_incident, :string, :required,
+             "Location",default_value: "Building 1, Room 207"
+    property :priority, :integer, :required, "Priority", default_value: 2
+    property :time_of_incident, :string, :required, "Date and Time",
+             default_value: "2016-02-23T23:25:00.000Z"
+    property :progress, :integer, :required, "Progress", default_value: 0
   end
   # GET /incidents/new
   def new
