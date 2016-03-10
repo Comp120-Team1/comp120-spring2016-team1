@@ -26,7 +26,6 @@
                     <li><%= link_to 'View Incidents', incidents_path, :method => :get%></li>
                     <li><%= button_to 'New Incident', new_incident_path, :method => :get, class: "btn btn-danger navbar-btn" %></li>
                 </ul>
-
             </div><!-- /.container-fluid -->
         </nav>
         <div class="container-fluid">
@@ -40,5 +39,14 @@
                 <% end %>
             });
         </script>
+        <footer>
+            <hr>
+        <div class="container-fluid">
+            Incident Reporter
+            <a><%= button_to 'Developer?', '/api', :method => :get, class: "btn btn-warning bottom"%></a>
+        </div>
+        </footer>
+    
     </body>
+
 </html>

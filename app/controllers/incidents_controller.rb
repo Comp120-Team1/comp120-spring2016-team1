@@ -2,6 +2,12 @@ class IncidentsController < ApplicationController
   before_action :set_incident, only: [:show, :edit, :update, :destroy]
   before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
+  swagger_controller :incident, 'Incident'
+
+  swagger_api :index do
+    summary 'Returns all Incidents'
+    notes 'Notes...'
+  end
   # GET /incidents
   # GET /incidents.json
   def index
@@ -22,6 +28,10 @@ class IncidentsController < ApplicationController
   def edit
   end
 
+  swagger_api :create do
+    summary 'Create a new incident'
+    notes 'Yo '
+  end
   # POST /incidents
   # POST /incidents.json
   def create
@@ -72,6 +82,6 @@ class IncidentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def incident_params
-      params.require(:incident).permit(:priority, :dept_id, :person_id, :subject, :location_of_incident, :time_of_incident, :additional_details, :progress, :public, :picture_url, :video_url, :incident_category_id)
+      params.require(:incident).permit(:priority, :dept_id, :user_id, :subject, :location_of_incident, :time_of_incident, :additional_details, :progress, :public, :picture_url, :video_url, :incident_category_id)
     end
 end

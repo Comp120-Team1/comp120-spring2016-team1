@@ -53,6 +53,11 @@
         <% else %>
           Private
         <% end %>
+
+      </p>
+
+      <p>
+        <%= image_tag(@incident.picture_url, width: '30%', height: '30%', alt: 'No Uploaded Images', class: "logo") %>
       </p>
 
       <div class="btn-group col-md-offset-5" role="group" aria-label="...">

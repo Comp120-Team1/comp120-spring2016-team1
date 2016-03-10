@@ -12,3 +12,9 @@ open("db/incident_categories.txt") do |categories|
   end
 end
 Incident.delete_all
+User.delete_all
+
+
+derek = User.create(first_name:"Derek", last_name: "Benson")
+
+Incident.create(priority: 1, dept_id:1, user_id: derek.id, subject: "This is a test message", additional_details:"")
