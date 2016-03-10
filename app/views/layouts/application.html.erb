@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Incident Reporter</a>
+          <a class="navbar-brand" href="/">Incidents</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'View Incidents', incidents_path, :method => :get%></li>
@@ -38,4 +38,11 @@ $(document).ready(function() {
 });
     </script>
   </body>
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      Incident Reporter
+      <a><%= button_to 'Developer?', '/api', :method => :get, class: "btn btn-warning bottom"%></a>
+    </div>
+  </footer>
 </html>
