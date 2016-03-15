@@ -6,7 +6,8 @@ class IncidentsController < ApplicationController
 
   swagger_api :index do
     summary 'Returns all Incidents'
-    notes 'Returns a list of all incidents reported.'
+    notes 'Returns a list of all incidents reported. ID is not required but if specified selected a specific incident.'
+    param :path, :id, :integer, ""
   end
   # GET /incidents
   # GET /incidents.json
