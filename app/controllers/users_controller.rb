@@ -1,11 +1,16 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :destroy]
-  
+
   swagger_controller :incident, 'Incidents'
 
   swagger_api :index do
     summary 'Returns all Users'
     notes 'Returns a list of all active users.'
+  end
+
+  swagger_api :show do
+    summary 'Returns a specific user'
+    param :path, :id, :integer, :required, ""
   end
 
   # GET /users
@@ -72,7 +77,7 @@ class UsersController < ApplicationController
   def update
     user = User.find_by_id(params[:id])
     respond_to do |format|
-      if user != nil 
+      if user != nil
         if user.update(user_params)
           format.html { redirect_to user, notice: 'User was successfully updated.' }
           format.json { render :show, status: :ok, location: user }
@@ -80,7 +85,7 @@ class UsersController < ApplicationController
           format.html { render :edit }
           format.json { render json: user.errors, status: :unprocessable_entity }
         end
-      else 
+      else
           format.html { render :index }
           format.json { head :no_content, status: :bad_request }
       end
