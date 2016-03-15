@@ -1,5 +1,5 @@
 class IncidentsController < ApplicationController
-  before_action :set_incident, only: [:show, :edit, :update, :destroy]
+  before_action :set_incident, only: [:show, :edit]
   before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
   swagger_controller :incident, 'Incidents'
@@ -25,9 +25,15 @@ class IncidentsController < ApplicationController
     param :body, :tag, :incidentExample, :required, "Subject of Incident"
   end
   swagger_api :update do
-    summary 'Update a new incident'
-    notes 'Updates a new incident with given parameters. You MUST choose an integer for an existing incident (you can find the incident ID from the GET request above.)'
+    summary 'Update an existing incident'
+    notes 'Updates an existing incident with given parameters. You MUST choose an integer for an existing incident (you can find the incident ID from the GET request above.)'
     param :body, :tag, :incidentExample, :required, "Modifications to the Incident"
+    param :path, :id, :integer, :required, ""
+  end
+
+  swagger_api :destroy do
+    summary 'Deletes a new incident'
+    notes 'Delete a new incident with given parameters. You MUST choose an integer for an existing incident (you can find the incident ID from the GET request above.)'
     param :path, :id, :integer, :required, ""
   end
 
@@ -70,13 +76,19 @@ class IncidentsController < ApplicationController
   # PATCH/PUT /incidents/1
   # PATCH/PUT /incidents/1.json
   def update
+    incident = Incident.find_by_id(params[:id])
     respond_to do |format|
-      if @incident.update(incident_params)
-        format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
-        format.json { render :show, status: :ok, location: @incident }
+      if incident != nil
+        if incident.update(incident_params)
+          format.html { redirect_to incident, notice: 'Incident was successfully updated.' }
+          format.json { render :show, status: :ok, location: incident }
+        else
+          format.html { render :edit }
+          format.json { render json: incident.errors, status: :unprocessable_entity }
+        end
       else
-        format.html { render :edit }
-        format.json { render json: @incident.errors, status: :unprocessable_entity }
+        format.html { render :index }
+        format.json { head :no_content, status: :bad_request }
       end
     end
   end
@@ -84,10 +96,13 @@ class IncidentsController < ApplicationController
   # DELETE /incidents/1
   # DELETE /incidents/1.json
   def destroy
-    @incident.destroy
+    incident = Incident.find_by_id(params[:id])
+    if incident != nil
+      incident.destroy
+    end
     respond_to do |format|
       format.html { redirect_to incidents_url, notice: 'Incident was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { head :no_content, status: :bad_request }
     end
   end
 
@@ -97,6 +112,7 @@ class IncidentsController < ApplicationController
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_incident
+      incident
       @incident = Incident.find(params[:id])
     end
 
