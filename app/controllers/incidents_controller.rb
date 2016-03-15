@@ -1,5 +1,5 @@
 class IncidentsController < ApplicationController
-  before_action :set_incident, only: [:show, :edit, :destroy]
+  before_action :set_incident, only: [:show, :edit]
   before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
   swagger_controller :incident, 'Incidents'
@@ -82,14 +82,15 @@ class IncidentsController < ApplicationController
   # PATCH/PUT /incidents/1
   # PATCH/PUT /incidents/1.json
   def update
+    incident = Incident.find_by_id(params[:id])
     respond_to do |format|
-      if @incident != nil
-        if @incident.update(incident_params)
-          format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
-          format.json { render :show, status: :ok, location: @incident }
+      if incident != nil
+        if incident.update(incident_params)
+          format.html { redirect_to incident, notice: 'Incident was successfully updated.' }
+          format.json { render :show, status: :ok, location: incident }
         else
           format.html { render :edit }
-          format.json { render json: @incident.errors, status: :unprocessable_entity }
+          format.json { render json: incident.errors, status: :unprocessable_entity }
         end
       else
         format.html { render :index, status: :bad_request }
@@ -101,11 +102,12 @@ class IncidentsController < ApplicationController
   # DELETE /incidents/1
   # DELETE /incidents/1.json
   def destroy
-    if @incident != nil
-      @incident.destroy
+    incident = Incident.find_by_id(params[:id])
+    if incident != nil
+      incident.destroy
     end
     respond_to do |format|
-      format.html { redirect_to incidents_url, notice: 'Incident was successfully destroyed.' }
+      format.html { redirect_to incidents_url, notice: 'Incident was destroyed.' }
       format.json { head :no_content, status: :bad_request }
     end
   end
@@ -116,7 +118,7 @@ class IncidentsController < ApplicationController
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_incident
-      @incident = Incident.find_by_id(params[:id])
+      @incident = Incident.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
