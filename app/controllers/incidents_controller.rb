@@ -24,13 +24,13 @@ class IncidentsController < ApplicationController
     notes 'Creates a new incident with given parameters. Select the Model Schema on the right to test the endpoint.'
     param :body, :tag, :incidentExample, :required, "Subject of Incident"
   end
+
   swagger_api :update do
-    summary 'Update a new incident'
-    notes 'Updates a new incident with given parameters. You MUST choose an integer for an existing incident (you can find the incident ID from the GET request above.)'
+    summary 'Update a incident'
+    notes 'Updates a incident with given parameters. You MUST choose an integer for an existing incident (you can find the incident ID from the GET request above.)'
     param :body, :tag, :incidentExample, :required, "Modifications to the Incident"
     param :path, :id, :integer, :required, ""
   end
-
 
   swagger_model :incidentExample do
     description "An incident example"
@@ -43,6 +43,7 @@ class IncidentsController < ApplicationController
              defaultValue: "2016-02-23T23:25:00.000Z"
     property :progress, :integer, :required, "Progress", defaultValue: 0
   end
+
   # GET /incidents/new
   def new
     @incident = Incident.new
