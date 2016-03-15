@@ -6,7 +6,7 @@ Zach Kirsch, Derek Benson, Danielle Zelin, Michael Seltzer
 
 ### Introduction
 
-This is the description of a RESTful API for [Incidents Reporter](https://incidentreporter.herokuapp.com). The [full API documentation](https://irstaging.herokuapp.com/api) is an extensive documentation for the different endpoints and options that this API offers.
+This is the description of a RESTful API for [Incidents Reporter](https://incidentreporter.herokuapp.com). The [full API documentation](https://incidentreporter.herokuapp.com/api) is an extensive documentation for the different endpoints and options that this API offers.
 
 The API offers full CRUD capability for incidents via POST, GET, PATCH, and DELETE requests.
 
@@ -14,7 +14,7 @@ The API offers GET, POST, and PATCH endpoints for creating, updating, and viewin
 
 ### Instruction for Use
 
-Refer to our [API documentation](https://irstaging.herokuapp.com/api) for detailed descriptions of the endpoints and *live* testing of the API.
+Refer to our [API documentation](https://incidentreporter.herokuapp.com/api) for detailed descriptions of the endpoints and *live* testing of the API.
 
 ### Choices Explained
 
