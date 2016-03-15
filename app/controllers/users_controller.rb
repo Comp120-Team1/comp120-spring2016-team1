@@ -79,6 +79,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if user != nil
         if user.update(user_params)
+          @user = user
           format.html { redirect_to user, notice: 'User was successfully updated.' }
           format.json { render :show, status: :ok, location: user }
         else
@@ -95,7 +96,11 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
+    user = User.find_by_id(params[:id])
+    if user != nil
+      @user = user
+      user.destroy
+    end
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }

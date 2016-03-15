@@ -86,6 +86,7 @@ class IncidentsController < ApplicationController
     respond_to do |format|
       if incident != nil
         if incident.update(incident_params)
+          @incident = incident
           format.html { redirect_to incident, notice: 'Incident was successfully updated.' }
           format.json { render :show, status: :ok, location: incident }
         else
@@ -104,6 +105,7 @@ class IncidentsController < ApplicationController
   def destroy
     incident = Incident.find_by_id(params[:id])
     if incident != nil
+      @incident = incident
       incident.destroy
     end
     respond_to do |format|
