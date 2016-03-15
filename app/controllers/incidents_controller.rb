@@ -2,11 +2,11 @@ class IncidentsController < ApplicationController
   before_action :set_incident, only: [:show, :edit, :update, :destroy]
   before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
-  swagger_controller :incident, 'Incident'
+  swagger_controller :incident, 'Incidents'
 
   swagger_api :index do
     summary 'Returns all Incidents'
-    notes 'Notes...'
+    notes 'Returns a list of all incidents reported.'
   end
   # GET /incidents
   # GET /incidents.json
@@ -19,6 +19,30 @@ class IncidentsController < ApplicationController
   def show
   end
 
+  swagger_api :create do
+    summary 'Create a new incident'
+    notes 'Creates a new incident with given parameters. Select the Model Schema on the right to test the endpoint.'
+    param :body, :tag, :incidentExample, :required, "Subject of Incident"
+  end
+  swagger_api :update do
+    summary 'Update a new incident'
+    notes 'Updates a new incident with given parameters. You MUST choose an integer for an existing incident (you can find the incident ID from the GET request above.)'
+    param :body, :tag, :incidentExample, :required, "Modifications to the Incident"
+    param :path, :id, :integer, :required, ""
+  end
+
+
+  swagger_model :incidentExample do
+    description "An incident example"
+    property :subject, :string, :required, "Incident subject", defaultValue:
+             "Fire"
+    property :location_of_incident, :string, :required,
+             "Location",defaultValue: "Building 1, Room 207"
+    property :priority, :integer, :required, "Priority", defaultValue: 2
+    property :time_of_incident, :string, :required, "Date and Time",
+             defaultValue: "2016-02-23T23:25:00.000Z"
+    property :progress, :integer, :required, "Progress", defaultValue: 0
+  end
   # GET /incidents/new
   def new
     @incident = Incident.new
@@ -28,10 +52,6 @@ class IncidentsController < ApplicationController
   def edit
   end
 
-  swagger_api :create do
-    summary 'Create a new incident'
-    notes 'Yo '
-  end
   # POST /incidents
   # POST /incidents.json
   def create
