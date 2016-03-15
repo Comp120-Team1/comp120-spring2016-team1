@@ -27,14 +27,14 @@ class IncidentsController < ApplicationController
 
   swagger_model :incidentExample do
     description "An incident example"
-    property :subject, :string, :required, "Incident subject", default_value:
+    property :subject, :string, :required, "Incident subject", defaultValue:
              "Fire"
     property :location_of_incident, :string, :required,
-             "Location",default_value: "Building 1, Room 207"
-    property :priority, :integer, :required, "Priority", default_value: 2
+             "Location",defaultValue: "Building 1, Room 207"
+    property :priority, :integer, :required, "Priority", defaultValue: 2
     property :time_of_incident, :string, :required, "Date and Time",
-             default_value: "2016-02-23T23:25:00.000Z"
-    property :progress, :integer, :required, "Progress", default_value: 0
+             defaultValue: "2016-02-23T23:25:00.000Z"
+    property :progress, :integer, :required, "Progress", defaultValue: 0
   end
   # GET /incidents/new
   def new
