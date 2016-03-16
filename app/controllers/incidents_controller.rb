@@ -38,8 +38,8 @@ class IncidentsController < ApplicationController
   end
 
   swagger_api :destroy do
-    summary 'Deletes a new incident'
-    notes 'Delete a new incident with given parameters. You MUST choose an integer for an existing incident (you can find the incident ID from the GET request above.)'
+    summary 'Deletes a incident'
+    notes 'Delete a incident with given parameters. You MUST choose an integer for an existing incident (you can find the incident ID from the GET request above.)'
     param :path, :id, :integer, :required, ""
   end
 
@@ -53,6 +53,13 @@ class IncidentsController < ApplicationController
     property :time_of_incident, :string, :required, "Date and Time",
              defaultValue: "2016-02-23T23:25:00.000Z"
     property :progress, :integer, :required, "Progress", defaultValue: 0
+    property :dept_id, :integer, :optional
+    property :user_id, :integer, :optional
+    property :additional_details, :string, :optional
+    property :public, :boolean, :optional
+    property :picture_url, :string, :optional
+    property :video_url, :string, :optional
+    property :incident_category_id, :integer, :optional
   end
 
   # GET /incidents/new
