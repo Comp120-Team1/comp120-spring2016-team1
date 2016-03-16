@@ -17,11 +17,14 @@ class Filters extends Component {
         let revButtonClass = classNames({
             "glyphicon": true,
             "glyphicon-arrow-up": this.props.reverse,
-            "glyphicon-arrow-down": !this.props.reverse
+            "glyphicon-arrow-down": !this.props.reverse,
+            "align-top": true
         });
         return(
-            <div>
                 <div className="btn-group">
+                    <button onClick={this.props.reverseFilter} className="btn btn-default btn-lg" type="button">
+                        <span className={revButtonClass}> </span>
+                    </button>
                     <button className="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {normalize(this.props.orderedBy)} 
                         <span className="caret"></span>
@@ -29,15 +32,11 @@ class Filters extends Component {
                     <ul className="dropdown-menu">
                         {options.map((item) => {
                             return (
-                                <li key={item} onClick={() => this.props.changeFilter(item)}>{normalize(item)}</li>
+                                <li key={item} onClick={() => this.props.changeFilter(item)}><span>{normalize(item)}</span></li>
                             );
                         })}
                     </ul>
-                    <button onClick={this.props.reverseFilter} className="btn btn-default btn-lg" type="button">
-                        <span className={revButtonClass}> </span>
-                    </button>
                 </div>
-            </div>
         );
     }
 }
