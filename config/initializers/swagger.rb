@@ -20,5 +20,5 @@ GrapeSwaggerRails.options.before_filter_proc = proc {
 }
 GrapeSwaggerRails.options.url      = '/apidocs/api-docs.json'
 GrapeSwaggerRails.options.app_name = 'Incident Reporter'
-GrapeSwaggerRails.options.validatorUrl = nil
+GrapeSwaggerRails.options.validator_url = nil
 GrapeSwaggerRails.options.doc_expansion = 'list'
