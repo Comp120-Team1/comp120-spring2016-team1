@@ -6,7 +6,7 @@ class IncidentsController < ApplicationController
 
   swagger_api :index do
     summary 'Returns all Incidents'
-    notes 'Returns a list of all incidents reported.'
+    notes 'Returns a list of all incidents reported. Priority is either a 0, 1, or 2 (Low, Medium, or High). Progress is either a 0, 1, 2, or 3 (Reported, Processing, In Progress, or Resolved)'
   end
 
   swagger_api :show do
