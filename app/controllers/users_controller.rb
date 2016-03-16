@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :destroy]
 
-  swagger_controller :incident, 'Incidents'
+  swagger_controller :users, 'Users'
 
   swagger_api :index do
     summary 'Returns all Users'
