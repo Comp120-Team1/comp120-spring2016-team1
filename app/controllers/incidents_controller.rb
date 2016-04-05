@@ -1,12 +1,17 @@
 class IncidentsController < ApplicationController
-  before_action :set_incident, only: [:show, :edit, :update, :destroy]
+  before_action :set_incident, only: [:show, :edit]
   before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
-  swagger_controller :incident, 'Incident'
+  swagger_controller :incident, 'Incidents'
 
   swagger_api :index do
     summary 'Returns all Incidents'
-    notes 'Notes...'
+    notes 'Returns a list of all incidents reported. Priority is either a 0, 1, or 2 (Low, Medium, or High). Progress is either a 0, 1, 2, or 3 (Reported, Processing, In Progress, or Resolved)'
+  end
+
+  swagger_api :show do
+    summary 'Returns a specific incident'
+    param :path, :id, :integer, :required, ""
   end
   # GET /incidents
   # GET /incidents.json
@@ -19,6 +24,44 @@ class IncidentsController < ApplicationController
   def show
   end
 
+  swagger_api :create do
+    summary 'Create a new incident'
+    notes 'Creates a new incident with given parameters. Select the Model Schema on the right to test the endpoint.'
+    param :body, :tag, :incidentExample, :required, "Subject of Incident"
+  end
+
+  swagger_api :update do
+    summary 'Update an existing incident'
+    notes 'Updates an existing incident with given parameters. You MUST choose an integer for an existing incident (you can find the incident ID from the GET request above.)'
+    param :body, :tag, :incidentExample, :required, "Modifications to the Incident"
+    param :path, :id, :integer, :required, ""
+  end
+
+  swagger_api :destroy do
+    summary 'Deletes a incident'
+    notes 'Delete a incident with given parameters. You MUST choose an integer for an existing incident (you can find the incident ID from the GET request above.)'
+    param :path, :id, :integer, :required, ""
+  end
+
+  swagger_model :incidentExample do
+    description "An incident example"
+    property :subject, :string, :required, "Incident subject", defaultValue:
+             "Fire"
+    property :location_of_incident, :string, :required,
+             "Location",defaultValue: "Building 1, Room 207"
+    property :priority, :integer, :required, "Priority", defaultValue: 2
+    property :time_of_incident, :string, :required, "Date and Time",
+             defaultValue: "2016-02-23T23:25:00.000Z"
+    property :progress, :integer, :required, "Progress", defaultValue: 0
+    property :dept_id, :integer, :optional
+    property :user_id, :integer, :optional
+    property :additional_details, :string, :optional
+    property :public, :boolean, :optional
+    property :picture_url, :string, :optional
+    property :video_url, :string, :optional
+    property :incident_category_id, :integer, :optional
+  end
+
   # GET /incidents/new
   def new
     @incident = Incident.new
@@ -28,10 +71,6 @@ class IncidentsController < ApplicationController
   def edit
   end
 
-  swagger_api :create do
-    summary 'Create a new incident'
-    notes 'Yo '
-  end
   # POST /incidents
   # POST /incidents.json
   def create
@@ -50,13 +89,20 @@ class IncidentsController < ApplicationController
   # PATCH/PUT /incidents/1
   # PATCH/PUT /incidents/1.json
   def update
+    incident = Incident.find_by_id(params[:id])
     respond_to do |format|
-      if @incident.update(incident_params)
-        format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
-        format.json { render :show, status: :ok, location: @incident }
+      if incident != nil
+        if incident.update(incident_params)
+          @incident = incident
+          format.html { redirect_to incident, notice: 'Incident was successfully updated.' }
+          format.json { render :show, status: :ok, location: incident }
+        else
+          format.html { render :edit }
+          format.json { render json: incident.errors, status: :unprocessable_entity }
+        end
       else
-        format.html { render :edit }
-        format.json { render json: @incident.errors, status: :unprocessable_entity }
+        format.html { render :index, status: :bad_request }
+        format.json { head :no_content, status: :bad_request }
       end
     end
   end
@@ -64,10 +110,14 @@ class IncidentsController < ApplicationController
   # DELETE /incidents/1
   # DELETE /incidents/1.json
   def destroy
-    @incident.destroy
+    incident = Incident.find_by_id(params[:id])
+    if incident != nil
+      @incident = incident
+      incident.destroy
+    end
     respond_to do |format|
-      format.html { redirect_to incidents_url, notice: 'Incident was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to incidents_url, notice: 'Incident was destroyed.' }
+      format.json { head :no_content, status: :bad_request }
     end
   end
 

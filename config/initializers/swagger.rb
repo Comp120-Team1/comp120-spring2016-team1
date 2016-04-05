@@ -10,7 +10,8 @@ Swagger::Docs::Config.register_apis({
     controller_base_path: '',
     api_file_path: 'public/apidocs',
     base_path: ENV['HOST_URL'] || 'http://localhost:3000',
-    clean_directory: true
+    clean_directory: true,
+    camelize_model_properties: false
   }
 })
 
@@ -19,3 +20,5 @@ GrapeSwaggerRails.options.before_filter_proc = proc {
 }
 GrapeSwaggerRails.options.url      = '/apidocs/api-docs.json'
 GrapeSwaggerRails.options.app_name = 'Incident Reporter'
+GrapeSwaggerRails.options.validator_url = nil
+GrapeSwaggerRails.options.doc_expansion = 'list'

@@ -47,9 +47,9 @@
   </div>
 
   <div class="field form-group col-md-5">
-      <%= f.label :incident_category_id, 'Intended Department',
+    <%= f.label :incident_category_id, 'Intended Department',
         :class => 'required' %>
-    <%= collection_select(:incident, :incident_category_id, IncidentCategory.all,
+    <%= collection_select(:incident, :incident_category_id, IncidentCategory.all_cached,
                           :id, :name, {:prompt => false},
                           {:class => "selectpicker",
                            :'data-live-search' => "true"}) %>

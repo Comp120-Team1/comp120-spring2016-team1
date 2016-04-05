@@ -31,7 +31,6 @@
         <div class="container-fluid">
             <%= yield %>
         </div>
-
         <script>
             $(document).ready(function() {
                 <% if content_for? :js %>
@@ -39,14 +38,18 @@
                 <% end %>
             });
         </script>
-        <footer>
-            <hr>
-        <div class="container-fluid">
-            Incident Reporter
-            <a><%= button_to 'Developer?', '/api', :method => :get, class: "btn btn-warning bottom"%></a>
-        </div>
+        <footer class="footer-distributed">
+            <div class="footer-right">
+                <p class="footer-links">
+                    <%= link_to 'Developer', '/api', :method => :get %>
+                </p>
+            </div>
+            <div class="footer-left">
+                <p class="footer-links">
+                    <%= link_to 'View Incidents', incidents_path, :method => :get %>
+                    <%= link_to 'New Incident', new_incident_path, :method => :get %>
+                </p>
+            </div>
         </footer>
-    
     </body>
-
 </html>

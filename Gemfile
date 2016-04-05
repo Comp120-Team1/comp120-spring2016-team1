@@ -57,6 +57,9 @@ gem 'grape-swagger-rails'
 #cors
 gem 'rack-cors', :require => 'rack/cors'
 
+# memcache!
+gem 'dalli'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
