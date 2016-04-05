@@ -1,6 +1,8 @@
 import {Component} from 'react';
 import {connect} from 'react-redux';
-import classNames from 'classnames'
+import classNames from 'classnames';
+import SelectField from 'material-ui/lib/select-field';
+import MenuItem from 'material-ui/lib/menus/menu-item';
 
 const options = ["priority", "created_at"];
 
@@ -25,6 +27,13 @@ class Filters extends Component {
                     <button onClick={this.props.reverseFilter} className="btn btn-default btn-lg" type="button">
                         <span className={revButtonClass}> </span>
                     </button>
+                    <SelectField value={this.props.orderedBy} onChange={(event, index, value) => this.props.changeFilter(value)} disabled={false}>
+                        {options.map((item) => {
+                            return (
+                                <MenuItem key={item} value={item} primaryText={normalize(item)} /> 
+                            );
+                        })}
+                    </SelectField>
                     <button className="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {normalize(this.props.orderedBy)} 
                         <span className="caret"></span>
