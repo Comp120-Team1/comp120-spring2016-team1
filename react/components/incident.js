@@ -47,6 +47,22 @@ class Incident extends Component {
                         <div className="details">
                             {this.props.incident.additional_details}
                         </div>
+                        <div className="location">Location: 
+                            {this.props.incident.location_of_incident}
+                        </div>
+                        <div className="time">Incident occured at: 
+                            {this.props.incident.time_of_incident}
+                        </div>
+                        <div className="incident_progress">Progress: 
+                            {this.props.incident.progress}
+                        </div>
+                        <div className="picture">
+                            <img src={this.props.incident.picture_url} width='30%' height='30%' alt='No Uploaded Image'></img>
+                        </div>
+                        <div className="btn btn-success">
+                            <a href={'/incidents/' + this.props.incident.id + '/edit'}>Edit</a>
+                        </div>
+
                     </div>
                 </ReactCSSTransitionGroup>
             </li>
