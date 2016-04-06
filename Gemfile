@@ -51,6 +51,9 @@ gem 'font_assets'
 gem 'swagger-docs'
 gem 'grape-swagger-rails'
 
+# pagination
+gem 'will_paginate'
+
 #cors
 gem 'rack-cors', :require => 'rack/cors'
 

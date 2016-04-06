@@ -1,11 +1,11 @@
 <% content_for :js do %>
-  highlight_priorities(init_table)
+  init_table()
 <% end %>
 
 <p id="notice"><%= notice %></p>
 <div class="col-md-10 col-md-offset-1">
-    <table id="incident-list" class="table dt-responsive" >
-      <thead>
+    <table id="incident-list" class="table dt-responsive" data-source="<%= incidents_url(format: "json") %>" >
+     <!-- <thead>
         <tr>
           <th>Priority</th>
           <th>Subject</th>
@@ -19,7 +19,7 @@
       </thead>
 
       <tbody>
-        <% @incidents.each do |incident| %>
+        <!-- <% @incidents.each do |incident| %>
           <tr>
             <td class="text-center"><%= incident.getPriority(incident.priority) %></td>
             <td><%= incident.subject %></td>
@@ -32,7 +32,7 @@
             </td>
             <td><%= incident.getProgress(incident.progress) %></td>
           </tr>
-        <% end %>
+        <% end %> -->
       </tbody>
     </table>
 </div>
