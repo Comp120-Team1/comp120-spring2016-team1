@@ -1,6 +1,5 @@
 function init_table() {
   highlight_priorities(function() {
-    console.log("HELLO")
     var table = $('#incident-list').DataTable({
       "dom": 'l<"filtering"f>t<"pagination"p>',
       responsive: true,
