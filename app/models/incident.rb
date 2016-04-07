@@ -5,7 +5,9 @@ class Incident < ActiveRecord::Base
 
     def default_values
       #default to Unknown category
-      self.incident_category = IncidentCategory.first
+      if self.incident_category.nil?
+        self.incident_category = IncidentCategory.first
+      end
     end
 
     validates :priority, presence: true

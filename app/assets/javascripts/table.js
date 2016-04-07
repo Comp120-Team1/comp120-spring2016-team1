@@ -30,10 +30,6 @@ function init_table() {
                     data: 'incident_category.name'
                 },
                 {
-                    title:  'Category',
-                    data: 'incident_category.name'
-                },
-                {
                     title:  'Actions',
                     data: 'id',
                       "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
