@@ -1,39 +1,11 @@
 <% content_for :js do %>
   init_table()
 <% end %>
-
 <p id="notice"><%= notice %></p>
 <div class="col-md-10 col-md-offset-1">
     <table id="incident-list" class="table dt-responsive" data-source="<%= incidents_url(format: "json") %>" >
-     <!-- <thead>
-        <tr>
-          <th>Priority</th>
-          <th>Subject</th>
-          <th>Location of Incident</th>
-          <th>Time Submitted </th>
-          <th>Time of Incident</th>
-          <th>Category</th>
-          <th>Actions</th>
-          <th>Progress</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <!-- <% @incidents.each do |incident| %>
-          <tr>
-            <td class="text-center"><%= incident.getPriority(incident.priority) %></td>
-            <td><%= incident.subject %></td>
-            <td><%= incident.location_of_incident %></td>
-            <td><%= local_time_ago(incident.created_at) %></td>
-            <td><%= local_time_ago(incident.time_of_incident) %></td>
-            <td><%= incident.incident_category.name %></td>
-            <td> <%= link_to 'Edit', edit_incident_path(incident), :class => 'btn btn-default' %>
-                <%= link_to 'Show', incident, :class => 'btn btn-default' %>
-            </td>
-            <td><%= incident.getProgress(incident.progress) %></td>
-          </tr>
-        <% end %> -->
       </tbody>
     </table>
 </div>
+<div id="update" class="label label-info"> Auto Updated</div>
 <br>
