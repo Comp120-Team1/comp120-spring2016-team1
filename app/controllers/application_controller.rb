@@ -4,12 +4,9 @@ class ApplicationController < ActionController::Base
 		I18n.locale = params[:lacale] || I18n.default_locale
 	end
 	
-	def extract_locale_from_tld
-		parsed_locale = request.host.split('.').last
-		I18n.available_locales.map(&:to_s).include?(parsed_locale) ?
-	parsed_locale : nil
+	def default_url_options(options = {})
+		{ locale: I18n.locale }.merge options
 	end
-
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
