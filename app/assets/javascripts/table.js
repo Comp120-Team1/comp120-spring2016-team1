@@ -804,7 +804,20 @@ function init_table() {
       columns: [
                 {
                     title: 'Priority',
-                    data:  'priority.name'
+                    data:  'priority.name',
+                    "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
+                      if (oData.priority.name == "High") {
+                        $(nTd).html('<span class="glyphicon glyphicon-exclamation-sign priority_high" aria-hidden="true"></span>')
+                        $(nTd).append('<span class="glyphicon glyphicon-exclamation-sign priority_high" aria-hidden="true"></span>')
+                        $(nTd).append('<span class="glyphicon glyphicon-exclamation-sign priority_high" aria-hidden="true"></span>')
+                      } else if (oData.priority.name == "Medium") {
+                        $(nTd).html('<span class="glyphicon glyphicon-exclamation-sign priority_med" aria-hidden="true"></span>')
+                        $(nTd).append('<span class="glyphicon glyphicon-exclamation-sign priority_med" aria-hidden="true"></span>')
+                      } else if (oData.priority.name == "Low") {
+                        $(nTd).html('<span class="glyphicon glyphicon-exclamation-sign priority_low" aria-hidden="true"></span>')
+                      }
+
+                    }
                 }, {
                     title: 'Subject',
                     data:  'subject'
