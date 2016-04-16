@@ -46,10 +46,18 @@ $(document).ready(function() {
       </p>
     </div>
     <div class="footer-left">
-      <p class="footer-links">
-        <%= link_to 'View Incidents', incidents_path, :method => :get %>
-        <%= link_to 'New Incident', new_incident_path, :method => :get %>
-      </p>
+      <li class="dropup">
+      <a class="dropup-toggle" data-toggle="dropdown" href="#">
+        <%= t(".#{I18n.locale}") %>
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <% (I18n.available_locales.map(&:to_s)-[I18n.locale.to_s]).each do |loc| %>
+          <li>
+            <%= link_to t(".#{loc}"), locale: loc %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </footer>
 </html>
