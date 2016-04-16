@@ -21,9 +21,9 @@
  * -------------
  *
  * liveAjax
- *      Required:			true
- *      Type:				boolean|object
- *      Description:		Basically just enable live updates for the DataTables (every 5 seconds)
+ *      Required:     true
+ *      Type:       boolean|object
+ *      Description:    Basically just enable live updates for the DataTables (every 5 seconds)
  *
  * liveAjax.interval
  *      Required:           false

@@ -6,7 +6,7 @@
       locale: "<%= I18n.locale %>"
     });
     $('.datetimepicker').val(moment().format("YYYY-MM-DD hh:mm A"));
-    $('.datetimepicker').show();
+    $('.datetimepicker').change();
 
     $('input:checkbox').bootstrapSwitch();
 <% end %>
