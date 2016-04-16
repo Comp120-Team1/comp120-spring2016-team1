@@ -27,7 +27,16 @@ function init_table() {
       responsive: true,
       "order": [[0, "desc"], [ 3, "desc" ]],
       "oLanguage": { "sSearch": "Filter: " },
-      ajax: $('#incident-list').data('source'),
+      ajax: {
+          url: $('#incident-list').data('source')
+          /*dataSrc: function(json) {
+            return json.data.map(function(x){
+                x.created_at = moment(x.created_at).fromNow();
+                x.time_of_incident = moment(x.time_of_incident).fromNow();
+                return x
+            });
+          }*/
+      },
       "order": [[ 3, 'desc' ]],
       columns: [
                 {
@@ -41,11 +50,17 @@ function init_table() {
                     data:  'location_of_incident'
                 }, {
                     title:  'Time Submitted',
-                    data: 'created_at'
+                    data: 'created_at',
+                    "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
+                        $(nTd).html(moment(oData.created_at).fromNow());
+                    }
                 },
                 {
                     title:  'Time of Incident',
-                    data: 'time_of_incident'
+                    data: 'time_of_incident',
+                    "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
+                        $(nTd).html(moment(oData.time_of_incident).fromNow());
+                    }
                 },
                 {
                     title:  'Category',
