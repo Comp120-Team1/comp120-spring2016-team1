@@ -1,5 +1,10 @@
 <% content_for :js do %>
-  init_form()
+    $('.datetimepicker').datetimepicker({
+      sideBySide: true,
+      locale: "<%= I18n.locale %>"
+    });
+    $('input:checkbox').bootstrapSwitch();
+    $('.datetimepicker').val(moment().locale("<%= I18n.locale %>").format("LLLL"))
 <% end %>
 
 <%= javascript_include_tag 'fileupload' %>
@@ -42,7 +47,7 @@
   </div>
 
   <div class="field form-group col-md-5">
-    <%= f.label :time_of_incident, "Time of Incident", :class => 'required' %>
+    <%= f.label :time_of_incident, "Time of Incident", :class => 'requred' %>
     <%= f.datetime_select :time_of_incident, :class => "form-control"%>
   </div>
 

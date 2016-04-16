@@ -23,6 +23,8 @@
 //= require_tree
 //= require local_time
 //= require moment
+//= require moment/fr.js
+//= require moment/ru.js
 //= require bootstrap-datetimepicker
 //= require bootstrap-switch
 //= require bootstrap-select
