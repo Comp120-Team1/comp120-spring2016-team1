@@ -39,6 +39,11 @@ $(document).ready(function() {
     </script>
   </body>
   <footer class="footer-distributed">
+
+    <div class="col-md-4"><%= collection_select(:incident, :incident_category_id, IncidentCategory.all_cached,
+                          :id, :name, {:prompt => false},
+                          {:class => "selectpicker",
+                           :'data-live-search' => "true"}) %></div>
     <div class="footer-right">
       <p class="footer-links">
         <%= link_to 'Developer', '/api', :method => :get %>
@@ -46,8 +51,7 @@ $(document).ready(function() {
     </div>
     <div class="footer-left">
       <p class="footer-links">
-        <%= link_to 'View Incidents', incidents_path, :method => :get %>
-        <%= link_to 'New Incident', new_incident_path, :method => :get %>
+
       </p>
     </div>
   </footer>
