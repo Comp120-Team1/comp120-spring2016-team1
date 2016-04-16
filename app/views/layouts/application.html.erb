@@ -40,10 +40,8 @@ $(document).ready(function() {
   </body>
   <footer class="footer-distributed">
 
-    <div class="col-md-4"><%= collection_select(:incident, :incident_category_id, IncidentCategory.all_cached,
-                          :id, :name, {:prompt => false},
-                          {:class => "selectpicker",
-                           :'data-live-search' => "true"}) %></div>
+    <div class="col-md-4"><%= select_tag("Language", options_for_select(Language.all.collect {|u| [u.name]}), {:class => "selectpicker",
+     :'data-live-search' => "true"}) %></div>
     <div class="footer-right">
       <p class="footer-links">
         <%= link_to 'Developer', '/api', :method => :get %>

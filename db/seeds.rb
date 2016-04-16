@@ -11,10 +11,10 @@ open("db/incident_categories.txt") do |categories|
     IncidentCategory.create!(:name => category)
   end
 end
+open("db/languages.txt") do |languages|
+  languages.read.each_line do |language|
+    Language.create!(:name => language)
+  end
+end
 Incident.delete_all
 User.delete_all
-
-
-derek = User.create(first_name:"Derek", last_name: "Benson")
-
-Incident.create(priority: 1, dept_id:1, user_id: derek.id, subject: "This is a test message", additional_details:"")
