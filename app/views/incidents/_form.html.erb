@@ -1,10 +1,14 @@
 <% content_for :js do %>
+
+    // date time picker
     $('.datetimepicker').datetimepicker({
       sideBySide: true,
       locale: "<%= I18n.locale %>"
     });
+    $('.datetimepicker').val(moment().format("YYYY-MM-DD hh:mm A"));
+    $('.datetimepicker').change();
+
     $('input:checkbox').bootstrapSwitch();
-    $('.datetimepicker').val(moment().locale("<%= I18n.locale %>").format("LLLL"))
 <% end %>
 
 <%= javascript_include_tag 'fileupload' %>
