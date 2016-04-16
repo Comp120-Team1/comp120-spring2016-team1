@@ -18,11 +18,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Incidents</a>
+          <a class="navbar-brand" href="/?locale=<%= I18n.locale %>">Incident Reporter</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'View Incidents', incidents_path, :method => :get%></li>
-          <li><%= button_to 'New Incident', new_incident_path, :method => :get, class: "btn btn-danger navbar-btn" %></li>
+          <li><%= button_to 'New Incident', new_incident_path, :method => :get, class: "btn btn-danger navbar-btn", params: { locale: I18n.locale } %></li>
         </ul>
 
       </div><!-- /.container-fluid -->
