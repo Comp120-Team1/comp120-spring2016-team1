@@ -812,7 +812,7 @@ function init_table() {
       "oLanguage": { "sSearch": "Filter: ", "sUrl": "//cdn.datatables.net/plug-ins/1.10.7/i18n/" + get_lang(locale) + ".json"},
 
       ajax: {
-          url: $('#incident-list').data('source') + '?locale=' + locale
+          url: $('#incident-list').data('source')
       },
       "order": [[ 3, 'desc' ]],
       columns: [
