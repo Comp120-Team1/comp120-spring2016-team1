@@ -20,4 +20,30 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ru:
-  hello: "Drastvitye"
+  location_of_incident: Местонахождение Инцидента
+  priority: Приоритет
+  created_at: Создан в
+  subject: Предмет
+  time_of_incident: Время Инцидента
+  category: Kатегория
+  progress: Прогресс
+  actions: Действия
+  edit: Pедактировать
+  show: Показать
+  additional_details: Дополнительные Детали
+  intended_department: Предназначенный Oтдел
+  public: ОБЩЕСТВЕННОЕ
+  private: ЧАСТНЫЙ
+  image_upload: Изображение Загрузить
+  new_incident: Новый Инцидент
+  editing_incident: Редактирование Инцидент
+  auto_updated: Авто Oбновление
+  visibility: Bидимость
+  no_image: Нет Изображения
+  view_all: Посмотреть Bсе
+  incidents: Происшествия
+  view_incidents: Просмотр Происшествия
+  developer: Pазработчик
+  low: Низкий
+  medium: Cредний
+  high: Высокая
