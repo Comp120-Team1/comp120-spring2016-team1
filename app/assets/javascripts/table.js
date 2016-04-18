@@ -792,18 +792,11 @@ function init_table() {
 
       ajax: {
           url: $('#incident-list').data('source')
-          /*dataSrc: function(json) {
-            return json.data.map(function(x){
-                x.created_at = moment(x.created_at).fromNow();
-                x.time_of_incident = moment(x.time_of_incident).fromNow();
-                return x
-            });
-          }*/
       },
       "order": [[ 3, 'desc' ]],
       columns: [
                 {
-                    title: 'Priority',
+                    title: translations[locale].priority,
                     data:  'priority.name',
                     "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
                       if (oData.priority.name == "High") {
@@ -819,41 +812,41 @@ function init_table() {
 
                     }
                 }, {
-                    title: 'Subject',
+                    title: translations[locale].subject,
                     data:  'subject'
                 }, {
-                    title: 'Location of Incident',
+                    title: translations[locale].location_of_incident,
                     data:  'location_of_incident'
                 }, {
-                    title:  'Time Submitted',
+                    title:  translations[locale].created_at,
                     data: 'created_at',
                     "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
                         $(nTd).html(moment(oData.created_at).fromNow());
                     }
                 },
                 {
-                    title:  'Time of Incident',
+                    title:  translations[locale].time_of_incident,
                     data: 'time_of_incident',
                     "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
                         $(nTd).html(moment(oData.time_of_incident).fromNow());
                     }
                 },
                 {
-                    title:  'Category',
+                    title:  translations[locale].category,
                     data: 'incident_category.name'
                 },
                 {
-                    title:  'Actions',
+                    title:  translations[locale].actions,
                     data: 'id',
                       "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                          buttons = "<a class='btn btn-default' href="+ "'incidents/" + oData.id+ "/edit?locale=" + locale + "'>Edit</a>" +
-                                      "<a class='btn btn-default' href="+ "'incidents/" + oData.id + "?locale=" + locale + "'>Show</a>"
+                          buttons = "<a class='btn btn-default' href="+ "'incidents/" + oData.id+ "/edit?locale=" + locale + "'>" + translations[locale].edit + "</a>" +
+                                      "<a class='btn btn-default' href="+ "'incidents/" + oData.id + "?locale=" + locale + "'>" + translations[locale].show + "</a>"
                           $(nTd).html(buttons)
                           
                       }
                 },
                 {
-                    title:  'Progress',
+                    title:  translations[locale].progress,
                     data: 'progress.name'
                 }
 
