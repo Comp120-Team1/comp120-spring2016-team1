@@ -773,14 +773,14 @@ function init_table() {
         //pause live update
         if (table) {
           table.liveAjax.pause();
-          $('#update').html('Inactive - Update Paused');
+          $('#update').html(translations[locale].inactive);
         }
     });
 
     ifvisible.on("wakeup", function(){
       if (table){
         table.liveAjax.resume();
-        $('#update').html('Auto Updated');
+        $('#update').html(translations[locale].auto_updated);
       }
     });
 

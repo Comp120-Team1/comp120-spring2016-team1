@@ -77,7 +77,7 @@ class IncidentsController < ApplicationController
     @incident = Incident.new(incident_params)
     respond_to do |format|
       if @incident.save
-        format.html { redirect_to @incident, notice: 'Incident was successfully created.' }
+        format.html { redirect_to incident_path(@incident, :locale => I18n.locale), notice: 'Incident was successfully created.' }
         format.json { render :show, status: :created, location: @incident }
       else
         format.html { render :new }
@@ -94,7 +94,7 @@ class IncidentsController < ApplicationController
       if incident != nil
         if incident.update(incident_params)
           @incident = incident
-          format.html { redirect_to incident, notice: 'Incident was successfully updated.' }
+          format.html { redirect_to incident_url(incident, :locale => I18n.locale), notice: 'Incident was successfully updated.' }
           format.json { render :show, status: :ok, location: incident }
         else
           format.html { render :edit }
