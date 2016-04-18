@@ -46,18 +46,24 @@ $(document).ready(function() {
       </p>
     </div>
     <div class="footer-left">
-      <li class="dropup">
-      <a class="dropup-toggle" data-toggle="dropdown" href="#">
-        <%= t(".#{I18n.locale}") %>
-        <b class="caret"></b>
-      </a>
-      <ul class="dropdown-menu">
-        <% (I18n.available_locales.map(&:to_s)-[I18n.locale.to_s]).each do |loc| %>
-          <li>
-            <%= link_to t(".#{loc}"), locale: loc %>
-          </li>
-        <% end %>
-      </ul>
+      <p class=footer-links">
+        <div class="dropup">
+           <button class="btn btn-default dropdown-toggle" type="button"
+           id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="false">
+            <span class="flag-icon flag-icon-<%= locale_to_country_code(I18n.locale) %>"></span>
+            <%= t(".#{I18n.locale}") %>
+            <b class="caret"></b>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <% (I18n.available_locales.map(&:to_s)-[I18n.locale.to_s]).each do |loc| %>
+              <li>
+                <%= link_to t(".#{locale_to_language(loc)}"), locale: loc %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </p>
     </div>
   </footer>
 </html>

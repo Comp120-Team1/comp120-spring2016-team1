@@ -32,6 +32,9 @@ gem 'aws-sdk', '~> 2.2'
 # for creating URIs
 gem 'addressable'
 
+# for flags
+gem 'flag_icon_css_rails'
+
 # Datatable plugin for creating responsive tables with front end backend tools
 # for development
 gem 'jquery-datatables-rails', '~> 3.3'
