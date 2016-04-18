@@ -48,6 +48,10 @@ es:
   medium: Medio
   high: Alto
   submit: Crear Incidencia
-
+  unknown: Desconocido
+  reported: Reportado
+  in_progress: En Progreso
+  processing: Tratamiento
+  resolved: Resuelto
 
 
