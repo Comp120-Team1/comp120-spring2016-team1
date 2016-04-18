@@ -604,7 +604,7 @@ function get_lang(langcode) {
             "nativeName": "Sesotho"
     },
         "es": {
-        "name": "Spanish; Castilian",
+        "name": "Spanish",
             "nativeName": "español, castellano"
     },
         "su": {
