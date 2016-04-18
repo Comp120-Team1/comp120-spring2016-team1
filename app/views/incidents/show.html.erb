@@ -49,9 +49,9 @@
       <p>
         <strong><%= t(:visibility) %>:</strong>
         <% if @incident.public %>
-          Public
+          <%= t(:public) %>
         <% else %>
-          Private
+          <%= t(:private) %>
         <% end %>
 
       </p>

@@ -48,6 +48,11 @@ fr:
   medium: Moyen
   high: Haute
   submit: Créer un Incident
+  unknown: Inconnu
+  reported: Signalé
+  in_progress: En Cours
+  processing: En Traitement
+  resolved: Résolu
 
 
 
