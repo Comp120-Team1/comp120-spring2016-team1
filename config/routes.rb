@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   get '/', to:'incidents#index'
   mount GrapeSwaggerRails::Engine => '/api'
+  get '/translate/:id', to:'translate#getTranslation'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

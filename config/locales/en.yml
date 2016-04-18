@@ -47,4 +47,10 @@ en:
   low: Low
   medium: Medium
   high: High
+  submit: Create Incident
+  unknown: Unknown
+  reported: Reported
+  in_progress: In Progress
+  processing: Processing
+  reported: Resolved
 

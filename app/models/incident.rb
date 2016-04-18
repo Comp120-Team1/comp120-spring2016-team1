@@ -27,15 +27,15 @@ class Incident < ActiveRecord::Base
 
     def getProgress progress
       if !progress.is_a? Numeric
-        "Unknown"
+        I18n.t(:unknown)
       elsif progress <= 0
-        "Reported"
+        I18n.t(:reported)
       elsif progress == 1
-        "Processing"
+        I18n.t(:processing)
       elsif progress == 2
-        "In Progress"
+        I18n.t(:in_progress)
       elsif progress >= 3
-        "Resolved"
+        I18n.t(:resolved)
       end
     end
 end
