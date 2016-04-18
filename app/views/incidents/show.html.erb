@@ -14,40 +14,40 @@
       <p id="notice" class="text-success"><%= notice %></p>
 
       <p>
-      <strong>Priority:</strong>
+      <strong><%= t(:priority) %>:</strong>
       <span class="priority">
         <%= @incident.getPriority(@incident.priority) %>
       </span>
       </p>
 
       <p>
-        <strong>Category:</strong>
+        <strong><%= t(:intended_department) %>:</strong>
         <%= @incident.incident_category.name %>
       </p>
 
 
       <p>
-        <strong>Location of Incident:</strong>
+        <strong><%= t(:location_of_incident) %>:</strong>
         <%= @incident.location_of_incident %>
       </p>
 
       <p>
-        <strong>Time of Incident:</strong>
+        <strong><%= t(:time_of_incident) %>:</strong>
         <%= @incident.time_of_incident %>
       </p>
 
       <p>
-        <strong>Additional Details:</strong>
+        <strong><%= t(:additional_details) %>:</strong>
         <%= @incident.additional_details %>
       </p>
 
       <p>
-        <strong>Progress:</strong>
+        <strong><%= t(:progress)%>:</strong>
         <%= @incident.getProgress(@incident.progress) %>
       </p>
 
       <p>
-        <strong>Visibility:</strong>
+        <strong><%= t(:visibility) %>:</strong>
         <% if @incident.public %>
           Public
         <% else %>
@@ -57,15 +57,15 @@
       </p>
 
       <p>
-        <%= image_tag(@incident.picture_url, width: '30%', height: '30%', alt: 'No Uploaded Images', class: "logo") %>
+        <%= image_tag(@incident.picture_url, width: '30%', height: '30%', alt: t(:no_image), class: "logo") %>
       </p>
 
       <div class="btn-group col-md-offset-5" role="group" aria-label="...">
         <button type="button" class="btn btn-default btn-md">
-          <%= link_to 'Edit', edit_incident_path(@incident) %>
+          <%= link_to t(:edit), edit_incident_path(@incident) %>
         </button>
         <button type="button" class="btn btn-default btn-md">
-          <%= link_to 'View All', incidents_path(@incident) %>
+          <%= link_to t(:view_all), incidents_path(@incident) %>
         </button>
       </div>
     </div>

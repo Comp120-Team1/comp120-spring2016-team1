@@ -774,16 +774,36 @@ function init_table() {
         //pause live update
         if (table) {
           table.liveAjax.pause();
-          $('#update').html('Inactive - Update Paused');
+          $('#update').html(translations[locale].inactive);
         }
     });
 
     ifvisible.on("wakeup", function(){
       if (table){
         table.liveAjax.resume();
-        $('#update').html('Auto Updated');
+        $('#update').html(translations[locale].auto_updated);
       }
     });
+
+    function translateText (originalText){
+      $.ajax({
+        url: '/translate/'+originalText+'?locale='+locale,
+        success: function(result) {
+          var title = "Translation of " + originalText;
+          swal(title, result);
+        },
+        error: function(XMLHttpRequest, errorMsg, errorThrown) {
+            swal('Translation Failed', 'Failed to fetch translation', 'error');
+        }
+    });
+    }
+    $('#incident-list').on( 'click', 'td', function () {
+      var cell = table.cell( this );
+      var index = cell.index();
+      if (index.column == "1") {
+        translateText(cell.data());
+      }
+    } );
 
     table = $('#incident-list').DataTable({
       "dom": 'l<"filtering"f>t<"pagination"p>',
@@ -814,7 +834,11 @@ function init_table() {
                     }
                 }, {
                     title: translations[locale].subject,
-                    data:  'subject'
+                    data:  'subject',
+                    "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
+                        $(nTd).html(oData.subject);
+                    }
+
                 }, {
                     title: translations[locale].location_of_incident,
                     data:  'location_of_incident'
@@ -843,7 +867,7 @@ function init_table() {
                           buttons = "<a class='btn btn-default' href="+ "'incidents/" + oData.id+ "/edit?locale=" + locale + "'>" + translations[locale].edit + "</a>" +
                                       "<a class='btn btn-default' href="+ "'incidents/" + oData.id + "?locale=" + locale + "'>" + translations[locale].show + "</a>"
                           $(nTd).html(buttons)
-                          
+
                       }
                 },
                 {
@@ -860,5 +884,3 @@ function init_table() {
     });
   })
 }
-
-

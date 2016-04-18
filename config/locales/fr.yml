@@ -20,4 +20,34 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
-  hello: "Hello world"
+  location_of_incident: Lieu de l'Incident
+  priority: Priorité
+  created_at: Heure de Dépôt
+  subject: Subjet
+  time_of_incident: Heure de l'Incident
+  category: Catégorie
+  progress: La Progression
+  actions: Actes
+  edit: Modifier
+  show: Montrer
+  additional_details: Détails Supplémentaires
+  intended_department: Département Destiné
+  public: PUBLIC
+  private: PRIVÉ
+  image_upload: Image Télécharger
+  new_incident: Nouvel Incident
+  editing_incident: Modification des Incidents
+  auto_updated: Mise à Jour Automatique
+  visibility: Visibilité
+  no_image: Pas d'image
+  view_all: Voir Tout
+  incidents: Incidents
+  view_incidents: Voir Incidents
+  developer: Développeur
+  low: Bas
+  medium: Moyen
+  high: Haute
+  submit: Créer un Incident
+
+
+
