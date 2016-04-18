@@ -63,6 +63,9 @@ gem 'rack-cors', :require => 'rack/cors'
 # memcache!
 gem 'dalli'
 
+#translate automatically with bing
+gem "bing_translator", "~> 4.5.0"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

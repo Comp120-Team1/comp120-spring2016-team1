@@ -784,6 +784,26 @@ function init_table() {
       }
     });
 
+    function translateText (originalText){
+      $.ajax({
+        url: '/translate/'+originalText+'?locale='+locale,
+        success: function(result) {
+          var title = "Translation of " + originalText;
+          swal(title, result);
+        },
+        error: function(XMLHttpRequest, errorMsg, errorThrown) {
+            swal('Translation Failed', 'Failed to fetch translation', 'error');
+        }
+    });
+    }
+    $('#incident-list').on( 'click', 'td', function () {
+      var cell = table.cell( this );
+      var index = cell.index();
+      if (index.column == "1") {
+        translateText(cell.data());
+      }
+    } );
+
     table = $('#incident-list').DataTable({
       "dom": 'l<"filtering"f>t<"pagination"p>',
       responsive: true,
@@ -813,7 +833,16 @@ function init_table() {
                     }
                 }, {
                     title: translations[locale].subject,
-                    data:  'subject'
+                    data:  'subject',
+                    "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
+                        window.sendTranslate = function(){
+                          console.log(oData.subject);
+                          translateText(oData.subject);
+                        }
+                        $(nTd).html(oData.subject);
+                        $(nTd).append("   <a class='glyphicon glyphicon-transfer' onclick='sendTranslate()' >" + "</a>")
+                    }
+
                 }, {
                     title: translations[locale].location_of_incident,
                     data:  'location_of_incident'
@@ -842,7 +871,7 @@ function init_table() {
                           buttons = "<a class='btn btn-default' href="+ "'incidents/" + oData.id+ "/edit?locale=" + locale + "'>" + translations[locale].edit + "</a>" +
                                       "<a class='btn btn-default' href="+ "'incidents/" + oData.id + "?locale=" + locale + "'>" + translations[locale].show + "</a>"
                           $(nTd).html(buttons)
-                          
+
                       }
                 },
                 {
@@ -859,5 +888,3 @@ function init_table() {
     });
   })
 }
-
-
