@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Incidents</title>
+    <title><%= t(:incidents) %></title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
@@ -21,8 +21,8 @@
           <a class="navbar-brand" href="/?locale=<%= I18n.locale %>">Incident Reporter</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'View Incidents', incidents_path, :method => :get%></li>
-          <li><%= button_to 'New Incident', new_incident_path, :method => :get, class: "btn btn-danger navbar-btn", params: { locale: I18n.locale } %></li>
+          <li><%= link_to t(:view_incidents), incidents_path, :method => :get%></li>
+          <li><%= button_to t(:new_incident), new_incident_path, :method => :get, class: "btn btn-danger navbar-btn", params: { locale: I18n.locale } %></li>
         </ul>
 
       </div><!-- /.container-fluid -->
@@ -42,7 +42,7 @@ $(document).ready(function() {
   <footer class="footer-distributed">
     <div class="footer-right">
       <p class="footer-links">
-        <%= link_to 'Developer', '/api', :method => :get %>
+        <%= link_to t(:developer), '/api', :method => :get %>
       </p>
     </div>
     <div class="footer-left">

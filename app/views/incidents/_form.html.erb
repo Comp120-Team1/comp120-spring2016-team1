@@ -28,35 +28,35 @@
 
 <div class="col-md-10 col-md-offset-1">
   <div class="field form-group col-md-7">
-    <%= f.label :subject, :class => 'required' %>
+    <%= f.label :subject, t(:subject), :class => 'required' %>
     <%= f.text_field :subject, :class => "form-control"%>
   </div>
 
   <div class="field form-group col-md-5">
-    <%= f.label :priority, :class => 'required' %><br>
-    <%= f.select :priority, [['Low','1'],['Medium','2'],['High','3']],
+    <%= f.label :priority, t(:priority), :class => 'required' %><br>
+    <%= f.select :priority, [[t(:low),'1'],[t(:medium),'2'],[t(:high),'3']],
       {:selected => @incident.priority}, {class: 'selectpicker'} %>
 
   </div>
 
   <div class="field form-group col-md-7" >
-    <%= f.label :additional_details, "Additional Details" %>
+    <%= f.label :additional_details, t(:additional_details) %>
     <%= f.text_area :additional_details, :class => "form-control", :rows => "10"%>
   </div>
 
   <div class="field form-group col-md-5">
-    <%= f.label :location_of_incident, "Location of Incident",
+    <%= f.label :location_of_incident, t(:location_of_incident),
         :class => 'required' %>
     <%= f.text_field :location_of_incident, :class => "form-control"%>
   </div>
 
   <div class="field form-group col-md-5">
-    <%= f.label :time_of_incident, "Time of Incident", :class => 'requred' %>
+    <%= f.label :time_of_incident, t(:time_of_incident), :class => 'requred' %>
     <%= f.datetime_select :time_of_incident, :class => "form-control"%>
   </div>
 
   <div class="field form-group col-md-5">
-    <%= f.label :incident_category_id, 'Intended Department',
+    <%= f.label :incident_category_id, t(:intended_department),
         :class => 'required' %>
     <%= collection_select(:incident, :incident_category_id, IncidentCategory.all_cached,
                           :id, :name, {:prompt => false},
@@ -67,14 +67,14 @@
   <div class="field form-group col-md-5">
     <%= f.label :public do %>
             <%= f.check_box :public, :checked => true,
-                        :data => {:size=>'small', 'on-text'=>'PUBLIC', 'off-text'=>'PRIVATE' }
+                        :data => {:size=>'small', 'on-text'=>t(:public), 'off-text'=>t(:private) }
                 %>
 
     <% end %>
   </div>
 
   <div class="field form-group col-md-8">
-  <%= f.label :picture_url %><br>
+  <%= f.label :picture_url, t(:image_upload) %><br>
   <%= f.file_field :picture_url %>
   </div>
 

@@ -22,5 +22,17 @@ window.translations = {
        "actions": "Actes",
        "edit": "Modifier",
        "show": "Montrer"
+    },
+    "ru": {
+      "location_of_incident": "Местонахождение инцидента",
+      "priority": "приоритет",
+      "created_at": "Создан в",
+      "subject": "предмет",
+      "time_of_incident": "Время инцидента",
+      "category": "категория",
+      "progress": "Прогресс",
+      "actions": "действия",
+      "edit": "редактировать",
+      "show": "Показать"
     }
 }
