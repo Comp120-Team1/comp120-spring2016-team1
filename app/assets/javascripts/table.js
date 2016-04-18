@@ -835,12 +835,7 @@ function init_table() {
                     title: translations[locale].subject,
                     data:  'subject',
                     "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
-                        window.sendTranslate = function(){
-                          console.log(oData.subject);
-                          translateText(oData.subject);
-                        }
                         $(nTd).html(oData.subject);
-                        $(nTd).append("   <a class='glyphicon glyphicon-transfer' onclick='sendTranslate()' >" + "</a>")
                     }
 
                 }, {
