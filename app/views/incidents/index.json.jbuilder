@@ -14,17 +14,7 @@ json.data do
       end
     end
     json.progress do
-      if incident.progress <= 0
-        json.name "Reported"
-      elsif incident.progress == 1
-        json.name "Processing"
-      elsif incident.progress == 2
-        json.name "In Progress"
-      elsif incident.progress >= 3
-        json.name "Resolved"
-      else
-        json.name "Unknown"
-      end
+      json.name incident.getProgress incident.progress
     end
   end
 end

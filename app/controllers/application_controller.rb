@@ -10,6 +10,46 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
+  helper_method :locale_to_country_code
+  def locale_to_country_code (locale)
+    locale = "#{locale.downcase}" # convert to string
+
+    case locale
+    when "en"
+        return "us"
+    when "ru"
+        return "ru"
+    when "zh-CN"
+        return "cn"
+    when "fr"
+        return "fr"
+    when "es"
+        return "es"
+    else
+        return ""
+    end
+  end
+
+  helper_method :locale_to_language
+  def locale_to_language (locale)
+    locale = "#{locale.downcase}" # convert to string
+
+    case locale
+    when "en"
+        return "English"
+    when "ru"
+        return "Pусский"
+    when "zh-CN"
+        return "中文"
+    when "fr"
+        return "Français"
+    when "es"
+        return "Español"
+    else
+        return ""
+    end
+  end
+
   def default_url_options(options={})
     { locale: I18n.locale }
   end
