@@ -789,8 +789,7 @@ function init_table() {
       $.ajax({
         url: '/translate/'+originalText+'?locale='+locale,
         success: function(result) {
-          var title = originalText;
-          swal(title, result);
+          swal(translations[locale].translated + ": " + result, translations[locale].original_text + ": " + originalText);
         },
         error: function(XMLHttpRequest, errorMsg, errorThrown) {
             swal('Translation Failed', 'Failed to fetch translation', 'error');

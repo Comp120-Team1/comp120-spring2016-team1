@@ -12,7 +12,9 @@ window.translations = {
        "show": "Show",
        "auto_updated": "Auto Updated",
        "inactive": "Inactive - Update Paused",
-       "translate": "Translate"
+       "translate": "Translate",
+       "translated": "Translated",
+       "original_text": "Original Text"
     },
     "fr": {
        "location_of_incident": "Lieu de l'Incident",
@@ -27,7 +29,9 @@ window.translations = {
        "show": "Montrer",
        "auto_updated": "Mise à Jour Automatique",
        "inactive": "Inactif - Mise à jour en pause",
-       "translate": "Traduire"
+       "translate": "Traduire",
+       "translated": "Traduit",
+       "original_text": "Texte Original"
     },
     "ru": {
       "location_of_incident": "Местонахождение Инцидента",
@@ -42,7 +46,9 @@ window.translations = {
       "show": "Показать",
       "auto_updated": "Авто Oбновление",
       "inactive": "Неактивный - Обновление Приостановлено",
-      "translate": "Переведите"
+      "translate": "Переведите",
+      "translated": "переведенный",
+      "original_text": "Оригинальный текст"
     },
     "es": {
       "location_of_incident": "Localización del Incidente",
@@ -57,6 +63,8 @@ window.translations = {
       "show": "Espectáculo",
       "auto_updated": "Actualización Automática",
       "inactive": "Inactivo - Actualización de Pausa",
-      "translate":"Traducir"
+      "translate":"Traducir",
+      "translated": "Traducido",
+      "original_text": "Texto Original"
     }
 }
