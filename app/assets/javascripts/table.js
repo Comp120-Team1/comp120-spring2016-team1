@@ -789,7 +789,7 @@ function init_table() {
       $.ajax({
         url: '/translate/'+originalText+'?locale='+locale,
         success: function(result) {
-          var title = "Translation of " + originalText;
+          var title = originalText;
           swal(title, result);
         },
         error: function(XMLHttpRequest, errorMsg, errorThrown) {
@@ -836,7 +836,8 @@ function init_table() {
                     title: translations[locale].subject,
                     data:  'subject',
                     "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
-                        $(nTd).html(oData.subject);
+                        $(nTd).html("<span class='origText'>" + oData.subject+ "</span><br>");
+                        $(nTd).append("<span class='translate'>"+translations[locale].translate+"</span>");
                     }
 
                 }, {
