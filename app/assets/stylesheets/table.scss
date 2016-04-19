@@ -364,9 +364,41 @@ table.dataTable {
          }
       }
     }
+    tbody {
+      td:nth-child(3) {
+         cursor: pointer;
+         .translate {
+             visibility:hidden;
+         }
+      }
+    }
+    tbody {
+      td:nth-child(6) {
+         cursor: pointer;
+         .translate {
+             visibility:hidden;
+         }
+      }
+    }
 
     tbody {
       td:nth-child(2):hover {
+        .translate {
+            font-weight: bold;
+            visibility:visible;
+        }
+      }
+    }
+    tbody {
+      td:nth-child(3):hover {
+        .translate {
+            font-weight: bold;
+            visibility:visible;
+        }
+      }
+    }
+    tbody {
+      td:nth-child(6):hover {
         .translate {
             font-weight: bold;
             visibility:visible;

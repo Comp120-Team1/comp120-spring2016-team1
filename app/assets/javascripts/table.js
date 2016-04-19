@@ -799,7 +799,7 @@ function init_table() {
     $('#incident-list').on( 'click', 'td', function () {
       var cell = table.cell( this );
       var index = cell.index();
-      if (index.column == "1") {
+      if (index.column == "1" || index.column == "2" ||index.column == "5") {
         translateText(cell.data());
       }
     } );
@@ -841,7 +841,11 @@ function init_table() {
 
                 }, {
                     title: translations[locale].location_of_incident,
-                    data:  'location_of_incident'
+                    data:  'location_of_incident',
+                    "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
+                        $(nTd).html("<span class='origText'>" + oData.location_of_incident+ "</span><br>");
+                        $(nTd).append("<span class='translate'>"+translations[locale].translate+"</span>");
+                    }
                 }, {
                     title:  translations[locale].created_at,
                     data: 'created_at',
@@ -858,7 +862,11 @@ function init_table() {
                 },
                 {
                     title:  translations[locale].category,
-                    data: 'incident_category.name'
+                    data: 'incident_category.name',
+                    "fnCreatedCell": function(nTd, sData, oData, iRow, iCol) {
+                        $(nTd).html("<span class='origText'>" + oData.incident_category.name+ "</span><br>");
+                        $(nTd).append("<span class='translate'>"+translations[locale].translate+"</span>");
+                    }
                 },
                 {
                     title:  translations[locale].actions,
