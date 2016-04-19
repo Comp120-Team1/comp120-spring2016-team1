@@ -29,6 +29,10 @@
   margin: 0 0 10px;
 }
 
+.footer-distributed p.footer-links a:visited {
+  color: #ffffff;
+}
+
 .footer-distributed a {
   display:inline-block;
   line-height: 1.8;
