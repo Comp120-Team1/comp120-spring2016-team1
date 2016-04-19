@@ -768,7 +768,7 @@ function init_table() {
     moment.locale(locale);
     var table;
 
-    ifvisible.setIdleDuration(120); // Page will become idle after 120 seconds
+    ifvisible.setIdleDuration(10); // Page will become idle after 120 seconds
 
     ifvisible.on("idle", function(){
         //pause live update
