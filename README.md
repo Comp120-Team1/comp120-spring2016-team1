@@ -95,3 +95,15 @@ Once deployed, this app could receive 15,000 unique visits per day. At our curre
 - Caching our files in the browser (or in the Application Cache) so that revisits don't always restart the fetching process
 
 We will soon be implementing these improvements and testing the results with stress tests via Loader.io.
+
+## Internationalization
+
+We implemented internationalization (I18n) for this app as well. I18n is an
+umbrella term that covers both translation and localization. We implemented the
+following aspects:
+
+- Translation of the entire website, as chosen from the dropdown in the bottom
+  left of each page. This include _both_ translation of static content (content
+  that always the same) and translation of dynamic content (such as reports of
+  incidents).
+- Localization of date and time for different regions and locales.
